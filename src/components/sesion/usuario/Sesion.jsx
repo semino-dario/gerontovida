@@ -1,11 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { API } from "../../Globals"
 import ContenedorFormulario from "../ContenedorFormulario";
 import Preloder from "../../Preloder";
 import InputPassword from "../InputPassword";
-
 
 export default function Sesion() {
 
@@ -26,7 +24,7 @@ export default function Sesion() {
         e.preventDefault();
         setPreloder(true)
         try {
-            const response = await axios.post(`${API}login`, { email, password });
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}login`, { email, password });
             const { token } = response.data
             setPreloder(false)
             localStorage.setItem('token', token)

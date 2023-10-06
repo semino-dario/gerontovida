@@ -2,7 +2,6 @@ import { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import Preloder from '../../Preloder'
-import { API } from "../../Globals"
 import ContenedorFormulario from '../ContenedorFormulario'
 import InputPassword from '../InputPassword'
 import BotonSesion from '../BotonSesion'
@@ -28,7 +27,7 @@ export default function RegistroUsuario() {
         e.preventDefault()
         setPreloder(true)
         try {
-            const response = await axios.post(`${API}register`, { name, email, password, role })
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}register`, { name, email, password, role })
 
             const { token } = response.data
 

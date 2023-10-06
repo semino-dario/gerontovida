@@ -5,7 +5,6 @@ import axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { articuloEditado, mostrarArticulo } from "../../../state/actions"
-import { API } from "../../Globals"
 
 
 export default function Publicar() {
@@ -27,7 +26,7 @@ export default function Publicar() {
     const showError = (err) => {
         setError(true)
         setErrorMessage(err)
-        setTimeout(() => { setError(false) }, 1500)
+        setTimeout(() => { setError(false) }, 2000)
     }
 
     const uploadImage = async (e) => {
@@ -37,7 +36,7 @@ export default function Publicar() {
             const formData = new FormData()
             formData.append('File', selectedFile)
 
-            await axios.post(`${API}articulo/image`, formData, {
+            await axios.post(`${process.env.REACT_APP_API_URL}articulo/image`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`
@@ -49,14 +48,15 @@ export default function Publicar() {
                     setImage(objectKey)
                     console.log(`Success: ${message}`);
                 })
-                .catch((error) => {
-                    // Handle errors
-                    console.log(`ERROR DE CARGA DE IMAGEN: ${error}`);
-                    // You can display an error message to the user if needed
-                });
+            // .catch((error) => {
+            //     showError(`ERROR DE CARGA DE IMAGEN: ${error.response.data.message}`);
+
+            // });
         }
         catch (error) {
-            console.log(`ERROR DE CARGA DE IMAGEN:${error}`)
+            console.log(`ERROR DE CARGA DE IMAGEN:${error} // ${error.response.data.message}`)
+            showError(`ERROR DE CARGA DE IMAGEN: ${error.response.data.message}`);
+
         }
     }
 
@@ -88,13 +88,13 @@ export default function Publicar() {
             if (!Array.isArray(articuloEditar)) //////MODIFICAR ARTÍCULO
             {
 
-                await axios.put(`${API}articulo/${articuloEditar._id}`, formData, { headers })
+                await axios.put(`${process.env.REACT_APP_API_URL}articulo/${articuloEditar._id}`, formData, { headers })
 
             }
 
             else //////PUBLICAR ARTÍCULO
             {
-                await axios.post(`${API}articulo/nuevo`, formData, { headers })
+                await axios.post(`${process.env.REACT_APP_API_URL}articulo/nuevo`, formData, { headers })
             }
             cancelar()
 
@@ -113,25 +113,32 @@ export default function Publicar() {
                     <div className="publicarArticulos">
                         <h5>Título:</h5>
                         <input
+                            required={true}
                             type="text"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                         /> <br />
                         <h5>Autor:</h5>
                         <input
+                            required={true}
                             type="text"
                             value={author}
                             onChange={(e) => setAuthor(e.target.value)}
                         /> <br />
                         <h5>Imagen:</h5>
+                        <div className="archivos">
+                            <p >-sólo archivos jpg, jpeg, png, webp-</p>
+                        </div>
                         <input
                             type='file'
                             accept="image/*"
                             onChange={(e) => uploadImage(e)}
                         />
 
+                        <br />
                         <h5>Contenido:</h5>
                         <textarea
+                            required={true}
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
                             name="" id="" cols="30" rows="10"></textarea>
@@ -150,6 +157,7 @@ export default function Publicar() {
                         >Cancelar</button></div>
                 </ContenedorGeneral>
             </form>
+
         </PublicaciarArticulo>
 
     )
@@ -190,4 +198,9 @@ button:hover{
     background-color: red;
 }
 
+
+.archivos{
+display:inline-block;
+font-size:15px;
+}
 `

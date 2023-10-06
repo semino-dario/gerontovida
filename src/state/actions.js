@@ -1,7 +1,6 @@
 import { ARTICULO_EDITAR, CAMBIA_ICONO, MOSTRAR_ARTICULO, MOSTRAR_VIDEO } from "./types"
 import axios from "axios"
-
-const apiUrl = process.env.API_URL
+//import { API } from '../components/Globals'
 
 export const almacenarArticulo = noticia => {
     return {
@@ -20,7 +19,7 @@ export const almacenarVideo = video => {
 export const mostrarArticulo = () => async dispatch => {
 
     try {
-        const { data: rta } = await axios('http://localhost:3000/api/v1/articulos')
+        const { data: rta } = await axios(`${process.env.REACT_APP_API_URL}articulos`)
         dispatch(almacenarArticulo(rta))
     }
     catch (error) {

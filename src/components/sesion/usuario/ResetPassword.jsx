@@ -2,11 +2,9 @@ import axios from "axios";
 import { useState } from "react";
 import Preloder from "../../Preloder";
 import mailImage from "../../../svg/mail.svg"
-import { API } from "../../Globals"
 import ContenedorFormulario from "../ContenedorFormulario";
 import BotonSesion from "../BotonSesion";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 
 
 export default function ResetPassword() {
@@ -26,7 +24,7 @@ export default function ResetPassword() {
         e.preventDefault()
         setPreloder(true)
         try {
-            const resp = await axios.post(`${API}password/forgot`, { email })
+            const resp = await axios.post(`${process.env.REACT_APP_API_URL}password/forgot`, { email })
             showResponse(resp.data.link)
             setSuccess(true)
             setPreloder(false)

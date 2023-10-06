@@ -2,11 +2,12 @@ import styled from "styled-components"
 
 export default function BotonSesion(props) {
 
-    const { texto } = props
+    const { texto, onClick } = props
 
     return (
         <Boton>
             {texto}
+            {onClick}
         </Boton>
     )
 }

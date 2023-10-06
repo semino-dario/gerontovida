@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { articuloEditado } from '../../../state/actions';
 import BotonEliminar from './BotonEliminar';
-import { API } from "../../Globals"
 
 
 export default function BotonesEdicion(props) {
@@ -21,7 +20,7 @@ export default function BotonesEdicion(props) {
     const editarArticulo = async (id, slug) => {
 
         try {
-            const { data: rta } = await axios.get(`${API}articulo/${id}/${slug}`, { headers })
+            const { data: rta } = await axios.get(`${process.env.REACT_APP_API_URL}articulo/${id}/${slug}`, { headers })
             dispatch(articuloEditado(rta.data[0]))
             navigate('/publicar/' + token)
         }

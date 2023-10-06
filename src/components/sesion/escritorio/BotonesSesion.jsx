@@ -1,7 +1,6 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import styled from 'styled-components'
-import { API } from "../../Globals"
 
 export default function BotonesSesion() {
     const Navigate = useNavigate()
@@ -13,7 +12,7 @@ export default function BotonesSesion() {
 
     const handleLogout = async () => {
         try {
-            await axios.get(`${API}logout`, { headers })
+            await axios.get(`${process.env.REACT_APP_API_URL}logout`, { headers })
             localStorage.removeItem('token');
             Navigate('/sesion/')
 
@@ -25,21 +24,20 @@ export default function BotonesSesion() {
 
     return (
         <ContenedorBotones className="sesion">
-            <Link to={`/publicar/${token}`}> <button className="boton publicar"
-            >Publicar</button></Link>
+
+            <Link to={`/publicar/${token}`}><button className='boton publicar'>publicar</button></Link>
+
             <div className="botones-sesion">
-<<<<<<< HEAD:src/components/sesion/escritorio/BotonesSesion.jsx
-                <Link to={`/usuario-info/${token}`}>  <button className="boton"
-                >Usuario</button></Link>
-=======
-                <button className="boton"
-                >Usuario</button>
->>>>>>> d8c61f3eb1a455fe125cbb6e3fbbb1de544fe126:src/components/sesion/BotonesSesion.jsx
-                <button className="boton"
-                    onClick={handleLogout}
-                >Salir</button>
+                <Link to={`/usuario-info/${token}`}> <button className="boton">usuario</button></Link>
+
+                <button className="boton salir" onClick={handleLogout}>salir</button>
+
             </div>
-        </ContenedorBotones>)
+        </ContenedorBotones>
+
+
+
+    )
 }
 
 const ContenedorBotones = styled.div`
@@ -55,14 +53,10 @@ justify-content:space-around;
         padding: 0.3% 1%;
         width: 100px;
         }
-<<<<<<< HEAD:src/components/sesion/escritorio/BotonesSesion.jsx
-
 .boton:hover{
-background-color:red;
+    background-color:red;
 }
 
-=======
->>>>>>> d8c61f3eb1a455fe125cbb6e3fbbb1de544fe126:src/components/sesion/BotonesSesion.jsx
 .botones-sesion{
     display:flex;
     gap: 10px;
@@ -73,6 +67,10 @@ background-color:red;
 
     .publicar:hover{
         background-color: #008900;
+    }
+
+    .salir{
+        padding: 0.2% 1%;
     }
 `
 

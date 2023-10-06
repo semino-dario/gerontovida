@@ -1,0 +1,1 @@
+export const API = 'https://lazy-duck-outfit.cyclic.cloud/api/v1/'

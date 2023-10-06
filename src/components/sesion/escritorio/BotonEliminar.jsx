@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { API } from "../../Globals"
 
 export default function BotonEliminar(props) {
 
@@ -20,7 +19,7 @@ export default function BotonEliminar(props) {
 
     const eliminarArticulo = async (id) => {
         try {
-            await axios.delete(`${API}articulo/${id}`, { headers })
+            await axios.delete(`${process.env.REACT_APP_API_URL}articulo/${id}`, { headers })
             window.location.reload()
         }
         catch (error) {

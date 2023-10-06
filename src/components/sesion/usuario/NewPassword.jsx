@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import ContenedorFormulario from "../ContenedorFormulario";
 import Preloder from "../../Preloder";
-import { API } from "../../Globals"
 import InputPassword from "../InputPassword";
 
 export default function NewPassword() {
@@ -28,7 +27,7 @@ export default function NewPassword() {
 
         try {
             formData.append('password', newPassword)
-            const response = await axios.put(`${API}password/reset/${token.token}`, formData)
+            const response = await axios.put(`${process.env.REACT_APP_API_URL}password/reset/${token.token}`, formData)
             //console.log(response.data)
             setSuccess(true)
 

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { API } from "../../Globals"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
@@ -21,7 +20,7 @@ export default function UsuarioInfo() {
 
         try {
 
-            const resp = await axios.get(`${API}me`, { headers })
+            const resp = await axios.get(`${process.env.REACT_APP_API_URL}me`, { headers })
             setUsuario(resp.data.data)
             setPreloder(true)
         }
