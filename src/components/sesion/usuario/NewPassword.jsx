@@ -27,14 +27,12 @@ export default function NewPassword() {
 
         try {
             formData.append('password', newPassword)
-            const response = await axios.put(`${process.env.REACT_APP_API_URL}password/reset/${token.token}`, formData)
-            //console.log(response.data)
+            await axios.put(`${process.env.REACT_APP_API_URL}password/reset/${token.token}`, formData)
             setSuccess(true)
 
         }
 
         catch (error) {
-            // console.log(`ERROR DE NUEVA CONTRSEÑA ${error}`)
 
             showResponse(error.response.data.errMessage.split(': ')[2])
             setPreloder(false)

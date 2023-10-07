@@ -42,6 +42,9 @@ function PortadaHome() {
                     <a href='#sobreGerontovida'>  <img src={iconoQuienes} alt="" /></a>
                     <p>quiénes </p>
                 </div>
+                <div>
+                    <Link to='/sesion'> <p>login </p></Link>
+                </div>
             </div>
         </Encabezado>
     );
