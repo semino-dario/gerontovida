@@ -33,8 +33,8 @@ export default function ResetPassword() {
         catch (error) {
             console.log(error)
             setPreloder(false)
-            setEmail('')
-            showResponse(error.response.data.errMessage)
+            showResponse(error.response.data.message)
+
             return
         }
 
@@ -80,9 +80,10 @@ export default function ResetPassword() {
                             <h5>Mensaje enviado con éxito a: </h5>
                             <p> {email} </p>
                             <hr />
-                            <p>En esta versión de prueba el mail con el link de recuperación de contraseña no es enviado a la dirección real sino al inbox de Email Testing de Mailtrap.</p>
+                            <p>En esta versión de prueba el mail con el link de recuperación de contraseña no es enviado a la dirección real.</p>
                             <hr />
-                            <p>En el caso de no contar con acceso a Mailtrap, utilizar el siguiente link:</p>
+                            <p>Para generar nueva contraseña entrar al link más abajo</p>
+                            <hr />
                             <a href={responseMessage}>Generar nueva contraseña</a>
                             <hr />
                             <img src={mailImage} alt="" />

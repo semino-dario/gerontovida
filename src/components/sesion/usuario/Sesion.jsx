@@ -33,7 +33,7 @@ export default function Sesion() {
 
         catch (error) {
             setPreloder(false)
-            showError(error.response.data.errMessage)
+            showError(error.response.data.message)
             return
         }
     }

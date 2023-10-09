@@ -53,7 +53,7 @@ export default function NewPassword() {
 
     return (
         <>
-            {success ?
+            {!success ?
                 <ContenedorFormulario
                     formulario={
                         <form
