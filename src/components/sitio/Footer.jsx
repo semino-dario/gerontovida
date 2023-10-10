@@ -4,39 +4,17 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-
 function Footer() {
 
     return (
         <ContenedorFooter id="contacto">
             <div className="elementos-footer">
                 <h3>Estamos en contacto</h3>
-                <form name="contact" netlify>
-                    <FloatingLabel
-                        controlId="floatingInput"
-                        label="Dirección de mail"
-                        className="mb-3"
-                    >
-                        <Form.Control type="email" placeholder="name@example.com" />
-                    </FloatingLabel>
-                    <FloatingLabel
-                        controlId="floatingInput"
-                        label="Asunto"
-                        className="mb-3"
-                    >
-                        <Form.Control type="text" placeholder="asunto" />
-                    </FloatingLabel>
-                    <FloatingLabel controlId="floatingTextarea2" label="Comentario">
-                        <Form.Control
-                            as="textarea"
-                            placeholder="Leave a comment here"
-                            style={{ height: '100px' }}
-                        />
-                    </FloatingLabel>
-                    <Button variant="primary" type="submit">
-                        Enviar
-                    </Button>
-                </form>
+
+                <p> TE: 4455-43543</p>
+                <p> Email: gerontoredes@gmail.com</p>
+                <p>Bartolomé Mitre XXX </p>
+                <p> Ciudad Autónoma de Buenos Aires</p>
             </div>
         </ContenedorFooter>
     )
@@ -47,13 +25,13 @@ export default Footer;
 const ContenedorFooter = styled.div`
 background-color:#605555;
 display:flex;
-flex-direction:column;
+
 justify-content:center;
 align-items: center;
 padding: 4%;
+color:white;
 
 h3{
-    color:white;
 }
 
 .elementos-footer{

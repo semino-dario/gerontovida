@@ -55,7 +55,7 @@ function App() {
           <Preloder />
         </div>
         :
-        <BrowserRouter basename="/taupe-croquembouche-40c119.netlify.app">
+        <BrowserRouter >
           <ContenedorNav style={{ opacity: muestraNavbar ? "0" : "1" }}>
             <Navbar />
           </ ContenedorNav>

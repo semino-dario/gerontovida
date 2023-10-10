@@ -57,6 +57,11 @@ export default function Articulo({ encabezado }) {
 }
 const SeccionArticulo = styled.div`
  transition: opacity 0.4s;
+img{
+    width:400px;
+    
+}
+
 
  @media (min-width: 650px) {
  .texto{
