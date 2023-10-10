@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ContenedorFormulario from "../ContenedorFormulario";
 import Preloder from "../../Preloder";
 import InputPassword from "../InputPassword";
+import BotonSesion from "../BotonSesion";
 
 export default function Sesion() {
 
@@ -72,7 +73,12 @@ export default function Sesion() {
             <div><Link to="/reset-password" style={{ textDecoration: 'none' }}> ¿Olvidó su contraseña?</Link>
                 <br />
                 <Link to="/registro-usuario" style={{ textDecoration: 'none' }}>Registrarse</Link>
+                <br /><br /> <br />
             </div>
+            <Link to='/home'>
+                <BotonSesion
+                    texto={'volver'}
+                /></Link>
         </>
 
     )

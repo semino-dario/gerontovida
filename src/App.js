@@ -37,15 +37,15 @@ function App() {
       try {
         dispatch(mostrarArticulo());
         dispatch(mostrarVideo());
-        setTimeout(() => { setMuestraNavbar(false); setPreloder(false) }, 300)
-
+        setTimeout(() => { setMuestraNavbar(false) }, 300)
+        setPreloder(false)
       } catch (error) {
         console.log(error)
       }
     };
     fetchData();
 
-  }, [dispatch]);
+  }, []);
 
 
   return (

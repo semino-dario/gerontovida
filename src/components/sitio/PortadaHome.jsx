@@ -6,7 +6,8 @@ import iconoActividades from '../../svg/iconoActividades.svg'
 import iconoNoticias from '../../svg/iconoNoticias.svg'
 import iconoCanasta from '../../svg/iconoCanasta.svg'
 import iconoQuienes from '../../svg/iconoQuienes.svg'
-import iconoTV from '../../svg/iconoTV.svg'
+//import iconoTV from '../../svg/iconoTV.svg'
+import iconoLogin from '../../svg/iconoLogin.svg'
 
 
 function PortadaHome() {
@@ -33,17 +34,18 @@ function PortadaHome() {
                     <p>teatro</p>
 
                 </div>
-                <div>
+                {/* <div>
                     <a href='#videos'>   <img src={iconoTV} alt="" /></a>
                     <p>videos</p>
 
-                </div>
+                </div> */}
                 <div>
                     <a href='#sobreGerontovida'>  <img src={iconoQuienes} alt="" /></a>
                     <p>quiénes </p>
                 </div>
                 <div>
-                    <Link to='/sesion'> <p>login </p></Link>
+                    <Link to='/sesion'>    <img src={iconoLogin} alt="" /> </Link>
+                    <p>Login</p>
                 </div>
             </div>
         </Encabezado>

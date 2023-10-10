@@ -11,30 +11,32 @@ function Footer() {
         <ContenedorFooter id="contacto">
             <div className="elementos-footer">
                 <h3>Estamos en contacto</h3>
-                <FloatingLabel
-                    controlId="floatingInput"
-                    label="Dirección de mail"
-                    className="mb-3"
-                >
-                    <Form.Control type="email" placeholder="name@example.com" />
-                </FloatingLabel>
-                <FloatingLabel
-                    controlId="floatingInput"
-                    label="Asunto"
-                    className="mb-3"
-                >
-                    <Form.Control type="text" placeholder="asunto" />
-                </FloatingLabel>
-                <FloatingLabel controlId="floatingTextarea2" label="Comentario">
-                    <Form.Control
-                        as="textarea"
-                        placeholder="Leave a comment here"
-                        style={{ height: '100px' }}
-                    />
-                </FloatingLabel>
-                <Button variant="primary" type="submit">
-                    Enviar
-                </Button>
+                <form name="contact" netlify>
+                    <FloatingLabel
+                        controlId="floatingInput"
+                        label="Dirección de mail"
+                        className="mb-3"
+                    >
+                        <Form.Control type="email" placeholder="name@example.com" />
+                    </FloatingLabel>
+                    <FloatingLabel
+                        controlId="floatingInput"
+                        label="Asunto"
+                        className="mb-3"
+                    >
+                        <Form.Control type="text" placeholder="asunto" />
+                    </FloatingLabel>
+                    <FloatingLabel controlId="floatingTextarea2" label="Comentario">
+                        <Form.Control
+                            as="textarea"
+                            placeholder="Leave a comment here"
+                            style={{ height: '100px' }}
+                        />
+                    </FloatingLabel>
+                    <Button variant="primary" type="submit">
+                        Enviar
+                    </Button>
+                </form>
             </div>
         </ContenedorFooter>
     )

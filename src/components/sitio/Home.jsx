@@ -9,7 +9,7 @@ import Footer from './Footer';
 import styled from 'styled-components';
 import InfoSemino from './InfoSemino';
 import { Noticias } from './noticias/Noticias';
-import Videos from './Videos';
+//import Videos from './Videos';
 import Teatro from './Teatro';
 import PortadaHome from './PortadaHome';
 
@@ -42,7 +42,6 @@ export default function Home() {
                 <Actividades />
                 <Canasta />
                 <Teatro />
-                <Videos />
                 <QuienesSomos />
                 <InfoSemino />
             </ContainerHome>
