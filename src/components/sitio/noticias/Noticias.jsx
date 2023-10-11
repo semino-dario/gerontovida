@@ -11,7 +11,11 @@ export function Noticias() {
     setTimeout(() => { noticia() }, 3000)
 
     if (noticia === undefined) {
-        return <Preloder />
+        return (
+            <div>
+                <br /> <br /> <br />
+                <Preloder />
+            </div>)
 
     }
     return (
