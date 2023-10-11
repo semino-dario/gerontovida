@@ -40,12 +40,16 @@ export default function NewPassword() {
 
     const matchPassword = (e) => {
         e.preventDefault()
-        if (newPassword === newPassword2) {
+        if ((newPassword === newPassword2) && ((newPassword.length && newPassword2.length) > 8)) {
             handleSubmit()
         }
 
-        else {
+        else if (newPassword !== newPassword2) {
             showResponse('Las contraseñas ingresadas no coinciden')
+        }
+
+        else if ((newPassword.length && newPassword2.length) < 8) {
+            showResponse('Minimo 8 caracteres')
 
         }
     }
