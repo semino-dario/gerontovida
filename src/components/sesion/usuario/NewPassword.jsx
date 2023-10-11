@@ -33,8 +33,7 @@ export default function NewPassword() {
         }
 
         catch (error) {
-
-            showResponse(error.response.data.message.split(': ')[2])
+            showResponse(error.response.data.errMessage.split(': ')[2])
             setPreloder(false)
         }
     }
