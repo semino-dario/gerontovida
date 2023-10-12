@@ -19,7 +19,7 @@ export default function InputPassword(props) {
                 value={value}
                 onChange={onChange}
             />
-            <img className="imgPassword" style={!verPassword ? { marginTop: "10px" } : { marginTop: '13px' }}
+            <img className="imgPassword" style={!verPassword ? { marginTop: "10px" } : { marginTop: '12px' }}
                 onClick={() => { setVerPassword(!verPassword) }} src={!verPassword ? ojoAbierto : ojoCerrado} alt="" />
 
         </DivPassword>
