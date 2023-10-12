@@ -8,13 +8,12 @@ export function Noticias() {
 
     const noticia = useSelector((state) => state.noticia.data);
 
-    setTimeout(() => { noticia() }, 3000)
-
     if (noticia === undefined) {
         return (
             <div>
                 <br /> <br /> <br />
                 <Preloder />
+                <br /> <br /> <br />
             </div>)
 
     }
