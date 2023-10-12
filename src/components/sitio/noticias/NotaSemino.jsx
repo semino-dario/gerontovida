@@ -1,5 +1,5 @@
 import { ContenedorGeneral } from '../../Contenedor';
-import SeminoColumna from '../../../imagenes/imagen-semino.png'
+import SeminoColumna from '../../../imagenes/imagen-semino.webp'
 import styled from 'styled-components';
 import { Image } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
@@ -17,21 +17,23 @@ export default function () {
     )
     return (
         <ColumnaSemino>
-            <ContenedorGeneral className='contenedor-semino'>
-                {noticiaSemino.length > 0 && (
-                    <Link className='link' to={`/articulo/${noticiaSemino[noticiaSemino.length - 1]._id}/encabezado`}> <div className="semino-texto">
-                        <div >
-                            <h3>{noticiaSemino[noticiaSemino.length - 1].title}</h3>
+            {noticiaSemino.length > 0 && (
+                <Link className='link' to={`/articulo/${noticiaSemino[noticiaSemino.length - 1]._id}/encabezado`}>
+                    <ContenedorGeneral className='contenedor-semino'>
+
+                        <div className="semino-texto">
+                            <div >
+                                <h3>{noticiaSemino[noticiaSemino.length - 1].title}</h3>
+                            </div>
+                            <br />
+                            <div>
+                                <h5> La columna del Dr. Eugenio Semino - Defensor de la Tercera Edad</h5>
+                            </div>
                         </div>
-                        <br />
-                        <div>
-                            <h5> La columna del Dr. Eugenio Semino </h5>
+                        <div className="contenedor-imagen">
+                            <Image src={SeminoColumna} alt="Dr. Eugenio Semino" />
                         </div>
-                    </div> </Link>)}
-                <div className="contenedor-imagen">
-                    <Image src={SeminoColumna} alt="" />
-                </div>
-            </ContenedorGeneral>
+                    </ContenedorGeneral> </Link>)}
         </ColumnaSemino>
     )
 }
@@ -39,17 +41,16 @@ export default function () {
 const ColumnaSemino = styled.div`
 .contenedor-semino{
     flex-direction: row;
+    justify-content:space-between;
     height: 210px;
     background-color: #605555;
     border-color:#FFAA00;
     color:white;
-    text-align:left;
 }
 
 .contenedor-imagen{
     overflow: hidden;
     display:none;
-    flex-shrink: 0;
 }
 
 
@@ -61,11 +62,11 @@ img{
 }
 
 .semino-texto{
+    margin-left:30px;
+    padding-top:4%;
     display: flex;
     max-witdh:100%;
     flex-direction: column;
-    justify-content:center;
-    padding: 0 10% 0 10%;
     text-align:left;
     overflow: hidden;
 }

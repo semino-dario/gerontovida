@@ -69,7 +69,7 @@ const Container = styled.div`
 const ContenedorBotones = styled.div`
 display:flex;
 justify-content: space-between;
-margin-top:-5%;
+margin-top:-3%;
 
 @media (max-width: 768px) {
     margin-top:-15%;
