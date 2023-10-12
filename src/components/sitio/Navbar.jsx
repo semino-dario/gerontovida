@@ -45,7 +45,7 @@ function Navbar() {
         <NavLink className="navlink" to='/home/actividades' onClick={() => { cierraContenedor(); scrollToSection("actividades") }}> <TextoLink> Actividades</TextoLink></NavLink>
         <NavLink className="navlink" to='/home/canasta' onClick={() => { cierraContenedor(); scrollToSection("canasta"); }}> <TextoLink>Canasta de los Jubilados</TextoLink></NavLink>
         <NavLink className="navlink" to='/home/teatro' onClick={() => { cierraContenedor(); scrollToSection("teatro"); }}> <TextoLink>Teatro</TextoLink></NavLink>
-        <NavLink className="navlink" to='/home/videos' onClick={() => { cierraContenedor(); scrollToSection("videos"); }}><TextoLink> Videos</TextoLink></NavLink>
+        {/* <NavLink className="navlink" to='/home/videos' onClick={() => { cierraContenedor(); scrollToSection("videos"); }}><TextoLink> Videos</TextoLink></NavLink> */}
         <NavLink className="navlink" to='/home/sobreGerontovida' onClick={() => { cierraContenedor(); scrollToSection("sobreGerontovida"); }}> <TextoLink>¿Quiénes somos?</TextoLink></NavLink>
         <a className="navlink" href="#contacto" onClick={() => {
           cierraContenedor(); scrollToSection("contacto");
