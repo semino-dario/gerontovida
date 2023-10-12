@@ -9,7 +9,6 @@ export function Contenedor() {
 
 }
 
-
 export const ContenedorGeneral = styled.div`
 margin: 10% auto;
 display:flex;

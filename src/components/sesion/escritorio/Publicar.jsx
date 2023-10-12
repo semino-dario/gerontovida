@@ -5,6 +5,7 @@ import axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { articuloEditado, mostrarArticulo } from "../../../state/actions"
+import { FloatingLabel, Form } from "react-bootstrap"
 
 
 export default function Publicar() {
@@ -138,10 +139,11 @@ export default function Publicar() {
                         <br />
                         <h5>Contenido:</h5>
                         <textarea
+                            id="formattedText" name="formattedText" rows="4" cols="50"
                             required={true}
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
-                            name="" id="" cols="30" rows="10"></textarea>
+                        ></textarea>
                     </div>
                     {Error && <div className="py-3">
                         <p>{errorMessage}</p>

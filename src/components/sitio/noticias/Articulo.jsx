@@ -8,6 +8,7 @@ import Footer from "../Footer";
 import Preloder from "../../Preloder";
 import Portada from "../Portada";
 
+
 export default function Articulo({ encabezado }) {
 
     const [mostrarPantalla, setMostrarPantalla] = useState(true)
@@ -31,6 +32,11 @@ export default function Articulo({ encabezado }) {
         }
     })
 
+    // Function create an object with __html property for dangerouslySetInnerHTML
+    const createMarkup = (content) => {
+        return { __html: content };
+    };
+
     return (
         <>
             {preloder ?
@@ -45,7 +51,7 @@ export default function Articulo({ encabezado }) {
                             <hr />
                             <h4>{articulo.author}</h4>
                             <hr />
-                            <p className="text-start p-3 texto">{articulo.content}</p>
+                            <div className="text-start p-3 texto" dangerouslySetInnerHTML={createMarkup(articulo.content)} />
                         </div>)}
                     <div className="mb-4">
                         <Link to="/home/noticias"> <Button variant="outline-dark">Volver</Button> </Link>
