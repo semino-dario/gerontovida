@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -17,8 +17,9 @@ function Navbar() {
   const handleClick = () => {
     setClick(!clicked)
   }
+
   const cierraContenedor = () => {
-    icono.current.classList.remove("open");
+    icono.current.classList.toggle("open");
     handleClick()
   }
 
@@ -47,9 +48,9 @@ function Navbar() {
         <NavLink className="navlink" to='/home/teatro' onClick={() => { cierraContenedor(); scrollToSection("teatro"); }}> <TextoLink>Teatro</TextoLink></NavLink>
         {/* <NavLink className="navlink" to='/home/videos' onClick={() => { cierraContenedor(); scrollToSection("videos"); }}><TextoLink> Videos</TextoLink></NavLink> */}
         <NavLink className="navlink" to='/home/sobreGerontovida' onClick={() => { cierraContenedor(); scrollToSection("sobreGerontovida"); }}> <TextoLink>¿Quiénes somos?</TextoLink></NavLink>
-        <a className="navlink" href="#contacto" onClick={() => {
+        <NavLink className="navlink" to="/home/contacto" onClick={() => {
           cierraContenedor(); scrollToSection("contacto");
-        }}> <TextoLink>Contacto</TextoLink></a>
+        }}> <TextoLink>Contacto</TextoLink></NavLink>
       </div>
       <BgDiv ref={contenedor} className={`initial ${clicked ? ' active' : ''}`}> </BgDiv>
 
@@ -118,7 +119,7 @@ width:100%;
 }
 
 .contenedor-items.active{
-  width:100%;
+  width:0%;
   display:block;
   position:fixed;
   margin-left:3%;
@@ -135,7 +136,9 @@ width:100%;
   }
 }
 
-
+.navlink{
+  width:300px;
+}
 
 `
 

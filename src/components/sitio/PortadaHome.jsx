@@ -17,20 +17,20 @@ function PortadaHome() {
             <Link to="/home"><img className="imagen" src={ImagenPortada} alt="Gerontovida" /></Link>
             <div className="contenedorIconos">
                 <div>
-                    <a href='#noticias'> <img src={iconoNoticias} alt="noticias" /> </a>
+                    <Link to='/home/noticias'> <img src={iconoNoticias} alt="noticias" /> </Link>
                     <p>noticias</p>
                 </div>
                 <div>
-                    <a href='#actividades' >  <img src={iconoActividades} alt="" /> </a>
+                    <Link to='/home/actividades' >  <img src={iconoActividades} alt="" /> </Link>
                     <p>actividades</p>
 
                 </div>
                 <div>
-                    <a href='#canasta' >    <img src={iconoCanasta} alt="" /></a>
+                    <Link to='/home/canasta' >    <img src={iconoCanasta} alt="" /></Link>
                     <p>canasta </p>
                 </div>
                 <div>
-                    <a href='#teatro'><img src={iconoTeatro} alt="" /></a>
+                    <Link to='/home/teatro'><img src={iconoTeatro} alt="" /></Link>
                     <p>teatro</p>
 
                 </div>
@@ -40,7 +40,7 @@ function PortadaHome() {
 
                 </div> */}
                 <div>
-                    <a href='#sobreGerontovida'>  <img src={iconoQuienes} alt="" /></a>
+                    <Link to='/home/sobreGerontovida'>  <img src={iconoQuienes} alt="" /></Link>
                     <p>quiénes </p>
                 </div>
                 <div>

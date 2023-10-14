@@ -25,6 +25,7 @@ import ResetPassword from './components/sesion/usuario/ResetPassword';
 import RegistroUsuario from './components/sesion/usuario/RegristroUsuario';
 import NewPassword from './components/sesion/usuario/NewPassword';
 import UsuarioInfo from './components/sesion/escritorio/UsuarioInfo';
+import NotFound from './components/NotFound';
 
 function App() {
   const [preloder, setPreloder] = useState(true)
@@ -82,6 +83,7 @@ function App() {
             <Route path="/escritorio/:token" element={<Escritorio />} />
             <Route path="/publicar/:token" element={<Publicar />} />
             <Route path="/usuario-info/:token" element={<UsuarioInfo />} />
+            <Route path="*" element={<NotFound />} />
 
           </Routes>
         </BrowserRouter>

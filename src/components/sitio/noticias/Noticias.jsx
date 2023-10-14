@@ -18,8 +18,8 @@ export function Noticias() {
 
     }
     return (
-        <>
-            <NotaSemino id="noticias" />
+        <div id="noticias" >
+            <NotaSemino />
             {noticia.length > 0 &&
                 (
                     <ScrollHorizontal
@@ -35,7 +35,7 @@ export function Noticias() {
                         }
                     />
                 )}
-        </>
+        </div>
     )
 
 
