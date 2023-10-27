@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import Preloder from "../../Preloder";
 import axios from "axios";
 import BotonDescarga from "../../BotonDescarga";
+import { Link } from "react-router-dom";
 
 
 function Canasta() {
@@ -20,6 +21,7 @@ function Canasta() {
   const [id, setId] = useState(null)
   const [rubros, setRubros] = useState(null)
   const [totalCanasta, setTotalCanasta] = useState(null);
+
   let rubrosFinal = [];
   let listaCanastasAnteriores
 
@@ -87,7 +89,7 @@ function Canasta() {
           key={fecha._id}
           onClick={actualizaCanasta}
         >
-          <a href="#canasta" className={`${(fecha.periodo === periodo) ? "seleccionada" : ""}`}> {fecha.periodo} </a>
+          <Link to='' className={`${(fecha.periodo === periodo) ? "seleccionada" : ""}`}> {fecha.periodo} </Link>
         </div >
       );
     });
