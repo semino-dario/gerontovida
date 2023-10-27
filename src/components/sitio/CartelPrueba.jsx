@@ -23,8 +23,9 @@ export default function CartelPrueba() {
                     <hr />
 
                     <h5> ¿Qué se puede hacer aquí? </h5>  <p>
-                        En esta muestra del sitio es posible realizar las operaciones para registrarse como usuario y acceder al escritorio para publicar, editar o eliminar artículos de la sección de noticias. También es posible recuperar contraseña y acceder a la información del usuario loggeado. <br />
-                        La información que aparece en el resto de las secciones (actividades, canasta, etc) están harcodeadas en el front-end y no se pueden modificar.
+                        En esta muestra del sitio es posible realizar las operaciones para registrarse como usuario y acceder al escritorio para publicar, editar o eliminar artículos de la sección de noticias. También es posible recuperar contraseña y acceder a la información del usuario loggeado. La autentiación de usuario y sesión se realiza mediante token generado con JWT.<br />
+                        En la sección Canasta es posible publicar, editar o eliminar cualquiera de las Canastas, también se puede subir un archivo PDF con la información de la Canasta, el cual a su vez se puede descargar. <br />
+                        La información que aparece en el resto de las secciones (actividades, quiénes somos, etc) están harcodeadas en el front-end y no se pueden modificar.
                     </p>
                     <hr />
                     <h5>Información técnica</h5>
@@ -34,7 +35,7 @@ export default function CartelPrueba() {
                         El front-end se encuentra alojado en Netlify.
                     </p>
                     <p>
-                        El back-end es una API desarrollada con Node.js, Express y la base de datos con MongoDB. La misma se encuentra alojada en Cyclic. Las imágenes de los artículos se cargan en un bucket de AWS. <br /> <br />
+                        El back-end es una API desarrollada con Node.js, Express y la base de datos con MongoDB. La misma se encuentra alojada en Cyclic. Las imágenes de los artículos y archivos PDF de las canastas se cargan en un bucket de AWS S3. <br /> <br />
                         Se puede ver la documentación de la API aquí: <br />
                         <a href="https://api-contenidos.cyclic.cloud/" target="_blank">api-contenidos</a> <br /> <br />
                         Se puede ver el repositorio del front-end aquí: <br />

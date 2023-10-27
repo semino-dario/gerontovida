@@ -14,12 +14,12 @@ export default function BotonEliminar(props) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const { itemId } = props
+    const { itemId, urlEliminar } = props
 
 
     const eliminarArticulo = async (id) => {
         try {
-            await axios.delete(`${process.env.REACT_APP_API_URL}articulo/${id}`, { headers })
+            await axios.delete(`${process.env.REACT_APP_API_URL}${urlEliminar}${id}`, { headers })
             window.location.reload()
         }
         catch (error) {
@@ -37,7 +37,7 @@ export default function BotonEliminar(props) {
                 <Modal.Header closeButton>
                     <Modal.Title>¡Cuidado!</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Está a punto de eliminar un artículo.</Modal.Body>
+                <Modal.Body>Está a punto de eliminar un elemento.</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Cancelar

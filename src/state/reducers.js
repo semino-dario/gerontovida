@@ -1,9 +1,11 @@
-import { ARTICULO_EDITAR, CAMBIA_ICONO, MOSTRAR_ARTICULO, MOSTRAR_VIDEO } from "./types";
+import { ARTICULO_EDITAR, CAMBIA_ICONO, MOSTRAR_ARTICULO, MOSTRAR_VIDEO, MOSTRAR_CANASTA, CANASTA_EDITAR } from "./types";
 
 const initalState = {
     noticia: [],
     video: [],
-    articulo: []
+    articulo: [],
+    canasta: [],
+    canastaParaEditar: []
 }
 
 
@@ -13,6 +15,9 @@ export const apiReducer = (state = initalState, action) => {
         case MOSTRAR_ARTICULO:
             return { ...state, noticia: action.payload }
 
+        case MOSTRAR_CANASTA:
+            return { ...state, canasta: action.payload }
+
         case CAMBIA_ICONO:
             return { ...state, icono: action.icono }
 
@@ -21,6 +26,9 @@ export const apiReducer = (state = initalState, action) => {
 
         case ARTICULO_EDITAR:
             return { ...state, articulo: action.payload }
+
+        case CANASTA_EDITAR:
+            return { ...state, canastaParaEditar: action.payload }
 
         default:
             return state

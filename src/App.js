@@ -6,7 +6,7 @@ import Home from './components/sitio/Home'
 import Articulo from './components/sitio/noticias/Articulo'
 import Navbar from './components/sitio/Navbar'
 import { useDispatch } from 'react-redux';
-import { mostrarArticulo, mostrarVideo } from './state/actions';
+import { mostrarArticulo, mostrarCanasta, mostrarVideo } from './state/actions';
 import Actividades from './components/sitio/Actividades';
 import Canasta from './components/sitio/canasta/Canasta';
 import QuienesSomos from './components/sitio/QuienesSomos';
@@ -26,6 +26,9 @@ import RegistroUsuario from './components/sesion/usuario/RegristroUsuario';
 import NewPassword from './components/sesion/usuario/NewPassword';
 import UsuarioInfo from './components/sesion/escritorio/UsuarioInfo';
 import NotFound from './components/NotFound';
+import PublicarCanasta from './components/sesion/escritorio/PublicarCanasta';
+import CanastasPublicadas from './components/sesion/escritorio/CanastasPublicadas';
+import ArticulosPublicados from './components/sesion/escritorio/ArticulosPublicados';
 
 function App() {
   const [preloder, setPreloder] = useState(true)
@@ -37,6 +40,7 @@ function App() {
     const fetchData = async () => {
       try {
         dispatch(mostrarArticulo());
+        dispatch(mostrarCanasta())
         dispatch(mostrarVideo());
         setTimeout(() => { setMuestraNavbar(false) }, 300)
         setPreloder(false)
@@ -81,8 +85,11 @@ function App() {
             <Route path="/new-password/:token" element={<NewPassword />} />
             <Route path="/registro-usuario" element={<RegistroUsuario />} />
             <Route path="/escritorio/:token" element={<Escritorio />} />
-            <Route path="/publicar/:token" element={<Publicar />} />
+            <Route path="/articulos/publicar/:token" element={<Publicar />} />
+            <Route path="/articulos/publicados/:token" element={<ArticulosPublicados />} />
             <Route path="/usuario-info/:token" element={<UsuarioInfo />} />
+            <Route path="/canasta/publicar/:token" element={<PublicarCanasta />} />
+            <Route path="/canastas/publicadas/:token" element={<CanastasPublicadas />} />
             <Route path="*" element={<NotFound />} />
 
           </Routes>

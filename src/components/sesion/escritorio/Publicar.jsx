@@ -5,7 +5,6 @@ import axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { articuloEditado, mostrarArticulo } from "../../../state/actions"
-import { FloatingLabel, Form } from "react-bootstrap"
 
 
 export default function Publicar() {
@@ -37,7 +36,7 @@ export default function Publicar() {
             const formData = new FormData()
             formData.append('File', selectedFile)
 
-            await axios.post(`${process.env.REACT_APP_API_URL}articulo/image`, formData, {
+            await axios.post(`${process.env.REACT_APP_API_URL}articulo/imagen`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`
@@ -49,10 +48,7 @@ export default function Publicar() {
                     setImage(objectKey)
                     console.log(`Success: ${message}`);
                 })
-            // .catch((error) => {
-            //     showError(`ERROR DE CARGA DE IMAGEN: ${error.response.data.message}`);
 
-            // });
         }
         catch (error) {
             console.log(`ERROR DE CARGA DE IMAGEN:${error} // ${error.response.data.message}`)
@@ -69,7 +65,7 @@ export default function Publicar() {
         articuloEditar = []
         dispatch(mostrarArticulo());
         dispatch(articuloEditado(articuloEditar));
-        navigate('/escritorio/' + token)
+        navigate('/articulos/publicados/' + token)
 
     }
 

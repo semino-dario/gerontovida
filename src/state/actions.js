@@ -1,6 +1,5 @@
-import { ARTICULO_EDITAR, CAMBIA_ICONO, MOSTRAR_ARTICULO, MOSTRAR_VIDEO } from "./types"
+import { ARTICULO_EDITAR, CAMBIA_ICONO, CANASTA_EDITAR, MOSTRAR_ARTICULO, MOSTRAR_CANASTA, MOSTRAR_VIDEO } from "./types"
 import axios from "axios"
-//import { API } from '../components/Globals'
 
 export const almacenarArticulo = noticia => {
     return {
@@ -13,6 +12,13 @@ export const almacenarVideo = video => {
     return {
         type: MOSTRAR_VIDEO,
         payload: video
+    }
+}
+
+export const almacenarCanasta = canasta => {
+    return {
+        type: MOSTRAR_CANASTA,
+        payload: canasta
     }
 }
 
@@ -38,6 +44,18 @@ export const mostrarVideo = () => async dispatch => {
     }
 }
 
+export const mostrarCanasta = () => async dispatch => {
+    try {
+
+        const { data: rta } = await axios(`${process.env.REACT_APP_API_URL}canastas`)
+        dispatch(almacenarCanasta(rta))
+    }
+
+    catch (error) {
+        console.warn('ERROR DE AXIOS', error)
+    }
+}
+
 export const cambiaIcono = icono => {
 
     icono.current.classList.toggle("open")
@@ -56,5 +74,10 @@ export const articuloEditado = articulo => {
     }
 }
 
-
+export const canastaEditada = canastaParaEditar => {
+    return {
+        type: CANASTA_EDITAR,
+        payload: canastaParaEditar
+    }
+}
 

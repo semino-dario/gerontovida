@@ -25,7 +25,7 @@ export default function BotonesSesion() {
     return (
         <ContenedorBotones className="sesion">
 
-            <Link to={`/publicar/${token}`}><button className='boton publicar'>publicar</button></Link>
+            {/* <Link to={`/publicar/${token}`}><button className='boton publicar'>publicar</button></Link> */}
 
             <div className="botones-sesion">
                 <Link to={`/usuario-info/${token}`}> <button className="boton">usuario</button></Link>

@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export default function BotonSesion(props) {
 
-    const { texto, onClick } = props
+    const { texto, onClick, type } = props
 
     return (
         <Boton>
