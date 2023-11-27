@@ -80,7 +80,7 @@ function App() {
             </Route>
             <Route path="/articulo/:id/encabezado" element={<Articulo />} />
             <Route path="/reproducir-videos/:id" element={<ReproductorVideo />} />
-            <Route path="/sesion" element={<Sesion />} />
+            {/* <Route path="/sesion" element={<Sesion />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/new-password/:token" element={<NewPassword />} />
             <Route path="/registro-usuario" element={<RegistroUsuario />} />
@@ -89,7 +89,7 @@ function App() {
             <Route path="/articulos/publicados/:token" element={<ArticulosPublicados />} />
             <Route path="/usuario-info/:token" element={<UsuarioInfo />} />
             <Route path="/canasta/publicar/:token" element={<PublicarCanasta />} />
-            <Route path="/canastas/publicadas/:token" element={<CanastasPublicadas />} />
+            <Route path="/canastas/publicadas/:token" element={<CanastasPublicadas />} /> */}
             <Route path="*" element={<NotFound />} />
 
           </Routes>

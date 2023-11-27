@@ -48,11 +48,7 @@ export default function BotonDescarga(props) {
             <Col sm> <Button variant="dark" onClick={handleShow}>
                 {texto}       </Button></Col>
 
-
             <Modal show={show} onHide={handleClose}>
-                {/* <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header> */}
                 <Modal.Body>Está a punto de descargar un archivo PDF.</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>

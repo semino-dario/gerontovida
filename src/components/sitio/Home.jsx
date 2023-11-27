@@ -12,7 +12,6 @@ import { Noticias } from './noticias/Noticias';
 //import Videos from './Videos';
 import Teatro from './Teatro';
 import PortadaHome from './PortadaHome';
-import SkeletonLoader from '../SkeletonLoader';
 
 
 export default function Home() {

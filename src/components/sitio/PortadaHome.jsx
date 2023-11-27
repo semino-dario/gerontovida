@@ -7,7 +7,6 @@ import iconoNoticias from '../../svg/iconoNoticias.svg'
 import iconoCanasta from '../../svg/iconoCanasta.svg'
 import iconoQuienes from '../../svg/iconoQuienes.svg'
 //import iconoTV from '../../svg/iconoTV.svg'
-import iconoLogin from '../../svg/iconoLogin.svg'
 
 
 function PortadaHome() {
@@ -42,10 +41,6 @@ function PortadaHome() {
                 <div>
                     <Link to='/home/sobreGerontovida'>  <img src={iconoQuienes} alt="" /></Link>
                     <p>quiénes </p>
-                </div>
-                <div>
-                    <Link to='/sesion'>    <img src={iconoLogin} alt="" /> </Link>
-                    <p>Login</p>
                 </div>
             </div>
         </Encabezado>
