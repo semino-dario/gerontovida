@@ -50,7 +50,7 @@ function App() {
     };
     fetchData();
 
-  }, []);
+  }, [dispatch]);
 
 
   return (

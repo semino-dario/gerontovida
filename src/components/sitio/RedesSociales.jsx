@@ -12,10 +12,10 @@ function RedesSociales() {
   return (
 
     <ContenedorRedesSociales>
-      <a href='#'><img src={IconoYouTube} /></a>
-      <a href='#'><img src={IconoFacebook} /></a>
-      <a href='#'><img src={IconoInstagram} /></a>
-      <a href='#'><img src={IconoLinkedin} /></a>
+      <a href='https://www.youtube.com/@espaciogerontovida6922' target="_blank" rel="noreferrer"  ><img src={IconoYouTube} alt="icono red social" /></a>
+      <a href='https://www.facebook.com/gerontovidainfo' rel="noreferrer"  ><img src={IconoFacebook} alt="icono red social" /></a>
+      <a href='https://www.instagram.com/espacio.gerontovida/' target="_blank" rel="noreferrer"  ><img src={IconoInstagram} alt="icono red social" /></a>
+      <a href='https://www.linkedin.com/in/espacio-gerontovida-b91b21227/' target="_blank" rel="noreferrer"  ><img src={IconoLinkedin} alt="icono red social" /></a>
     </ContenedorRedesSociales>
 
   );

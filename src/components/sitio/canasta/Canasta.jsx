@@ -5,7 +5,6 @@ import HorizontalBarChart from "./HorizontalBarChart";
 import CanastasAnteriores from "./CanastasAnteriores";
 import Accordion from 'react-bootstrap/Accordion';
 import { ContenedorGeneral } from '../../Contenedor';
-import { Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import Preloder from "../../Preloder";
 import axios from "axios";

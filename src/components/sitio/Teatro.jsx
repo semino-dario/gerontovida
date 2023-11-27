@@ -20,7 +20,7 @@ export default function Teatro() {
                 <ScrollHorizontal
                     contenido={[...obras].reverse().map((item, index) =>
                         <ContenedorObra key={index}>
-                            <Link to={`/reproducir-videos/${obras.length - index}`}>   <img src={item} /> </Link>
+                            <Link to={`/reproducir-videos/${obras.length - index}`}>   <img src={item} alt="obra de teatro" /> </Link>
                         </ContenedorObra>
                     )}
                 />

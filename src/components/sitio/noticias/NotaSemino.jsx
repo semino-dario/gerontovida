@@ -5,7 +5,7 @@ import { Image } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export default function () {
+export default function NotaSemino() {
     const noticia = useSelector((state) => state.noticia.data);
     let noticiaSemino = []
 

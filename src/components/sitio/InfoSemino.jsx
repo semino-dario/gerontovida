@@ -18,7 +18,7 @@ export default function InfoSemino() {
               <p>Defensor de la Tercera Edad</p>
             </div>
             <div className='container-imagen'>
-              <img src={ImagenSemino} />
+              <img alt="Eugenio Semino" src={ImagenSemino} />
             </div>
           </div>
           <hr />

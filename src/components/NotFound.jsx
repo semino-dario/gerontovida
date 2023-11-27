@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { ContenedorGeneral } from "./Contenedor";
-import { Button } from "react-bootstrap";
 import BotonSesion from "./sesion/BotonSesion";
 import error from '../svg/error.svg'
 import { Link } from "react-router-dom";

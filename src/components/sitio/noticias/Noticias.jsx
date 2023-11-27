@@ -2,19 +2,20 @@ import { useSelector } from "react-redux";
 import NotaSemino from "./NotaSemino";
 import { ScrollHorizontal } from "../ScrollHorizontal";
 import PortadaNoticia from "./PortadaNoticia";
-import Preloder from "../../Preloder";
+import SkeletonLoader from "../../SkeletonLoader";
 
 export function Noticias() {
 
     const noticia = useSelector((state) => state.noticia.data);
 
+
     if (noticia === undefined) {
+
         return (
-            <div>
-                <br /> <br /> <br />
-                <Preloder />
-                <br /> <br /> <br />
-            </div>)
+            <div className="">
+                <SkeletonLoader />
+            </div>
+        )
 
     }
     return (

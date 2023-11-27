@@ -17,7 +17,7 @@ export default function Videos() {
                 <ScrollHorizontal
                     contenido={videos.map((item) =>
                         <ContenedorObra>
-                            <img src={item} />
+                            <img alt="video" src={item} />
                         </ContenedorObra>
                     )}
                 />

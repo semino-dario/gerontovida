@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ContenedorGeneral } from "../../Contenedor";
 import styled from "styled-components";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import BotonesPublicar from "./BotonesPublicar";
 import { useDispatch, useSelector } from "react-redux";
 import Preloder from "../../Preloder";

@@ -37,11 +37,11 @@ export default function CartelPrueba() {
                     <p>
                         El back-end es una API desarrollada con Node.js, Express y la base de datos con MongoDB. La misma se encuentra alojada en Cyclic. Las imágenes de los artículos y archivos PDF de las canastas se cargan en un bucket de AWS S3. <br /> <br />
                         Se puede ver la documentación de la API aquí: <br />
-                        <a href="https://api-contenidos.cyclic.cloud/" target="_blank">api-contenidos</a> <br /> <br />
+                        <a href="https://api-contenidos.cyclic.app/" rel="noreferrer" target="_blank">api-contenidos</a> <br /> <br />
                         Se puede ver el repositorio del front-end aquí: <br />
-                        <a href="https://github.com/semino-dario/gerontovida" target="_blank">gerontovida-repo</a> <br /> <br />
+                        <a href="https://github.com/semino-dario/gerontovida" rel="noreferrer" target="_blank">gerontovida-repo</a> <br /> <br />
                         Se puede ver el repositorio de la API aquí: <br />
-                        <a href="https://github.com/semino-dario/api-contenidos" target="_blank">api-contenidos-repo</a>
+                        <a href="https://github.com/semino-dario/api-contenidos" rel="noreferrer" target="_blank">api-contenidos-repo</a>
 
 
                     </p>
