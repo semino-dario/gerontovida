@@ -11,10 +11,10 @@ export const ScrollHorizontal = (props) => {
     const [showRightButton, setShowRightButton] = useState(true);
     const ContainerClass = containerRef.current;
 
-    const showButtons = () => {
-        setShowLeftButton(ContainerClass.scrollLeft > 0);
-        setShowRightButton(ContainerClass.scrollLeft + ContainerClass.clientWidth < ContainerClass.scrollWidth);
-    };
+    // const showButtons = () => {
+    //     setShowLeftButton(ContainerClass.scrollLeft > 0);
+    //     setShowRightButton(ContainerClass.scrollLeft + ContainerClass.clientWidth < ContainerClass.scrollWidth);
+    // };
 
     const scrollLeftHandler = () => {
         containerRef.current.scrollBy({
@@ -32,18 +32,23 @@ export const ScrollHorizontal = (props) => {
 
     return (
         <>
+
             <ContenedorNoticia>
-                <Container className="ContainerClass" ref={containerRef} onScroll={() => { showButtons() }}>
+                <Container className="ContainerClass" ref={containerRef} >
                     {contenido}
                 </Container>
 
                 <ContenedorBotones>
-                    <LeftButton style={{ opacity: !showLeftButton ? '0' : '1', transform: 'rotateZ(180deg)', marginBottom: '-18px' }} onClick={scrollLeftHandler}> <img src={flechaDerecha} alt="" />
+                    <LeftButton style={{ transform: 'rotateZ(180deg)', marginBottom: '-18px' }} onClick={scrollLeftHandler}> <img src={flechaDerecha} alt="" />
                     </LeftButton>
-                    <RightButton style={{ opacity: showRightButton ? '1' : '0' }} onClick={scrollRightHandler}><img src={flechaDerecha} alt="" /></RightButton>
+                    <RightButton onClick={scrollRightHandler}><img src={flechaDerecha} alt="" /></RightButton>
                 </ContenedorBotones>
 
-                {/* <ContenedorBotones>
+                {/* <Container className="ContainerClass" ref={containerRef} onScroll={() => { showButtons() }}>
+                    {contenido}
+                </Container>
+
+                <ContenedorBotones>
                     <LeftButton style={{ opacity: !showLeftButton ? '0' : '1', transform: 'rotateZ(180deg)', marginBottom: '-18px' }} onClick={scrollLeftHandler}> <img src={flechaDerecha} alt="" />
                     </LeftButton>
                     <RightButton style={{ opacity: showRightButton ? '1' : '0' }} onClick={scrollRightHandler}><img src={flechaDerecha} alt="" /></RightButton>
