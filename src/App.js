@@ -29,6 +29,7 @@ import NotFound from './components/NotFound';
 import PublicarCanasta from './components/sesion/escritorio/PublicarCanasta';
 import CanastasPublicadas from './components/sesion/escritorio/CanastasPublicadas';
 import ArticulosPublicados from './components/sesion/escritorio/ArticulosPublicados';
+import Footer from './components/sitio/Footer';
 
 function App() {
   const [preloder, setPreloder] = useState(true)
@@ -77,6 +78,8 @@ function App() {
               <Route path="/home/:videos" element={<Videos />} />
               <Route path="/home/:sobreGerontovida" element={<QuienesSomos />} />
               <Route path="/home/:semino" element={<InfoSemino />} />
+              <Route path="/home/:contacto" element={<Footer />} />
+
             </Route>
             <Route path="/articulo/:id/encabezado" element={<Articulo />} />
             <Route path="/reproducir-videos/:id" element={<ReproductorVideo />} />

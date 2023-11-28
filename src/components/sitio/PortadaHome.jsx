@@ -6,6 +6,8 @@ import iconoActividades from '../../svg/iconoActividades.svg'
 import iconoNoticias from '../../svg/iconoNoticias.svg'
 import iconoCanasta from '../../svg/iconoCanasta.svg'
 import iconoQuienes from '../../svg/iconoQuienes.svg'
+import iconoContacto from '../../svg/contacto.svg'
+
 //import iconoTV from '../../svg/iconoTV.svg'
 
 
@@ -20,16 +22,16 @@ function PortadaHome() {
                     <p>noticias</p>
                 </div>
                 <div>
-                    <Link to='/home/actividades' >  <img src={iconoActividades} alt="" /> </Link>
+                    <Link to='/home/actividades' >  <img src={iconoActividades} alt="actividades" /> </Link>
                     <p>actividades</p>
 
                 </div>
                 <div>
-                    <Link to='/home/canasta' >    <img src={iconoCanasta} alt="" /></Link>
+                    <Link to='/home/canasta' >    <img src={iconoCanasta} alt="canasta" /></Link>
                     <p>canasta </p>
                 </div>
                 <div>
-                    <Link to='/home/teatro'><img src={iconoTeatro} alt="" /></Link>
+                    <Link to='/home/teatro'><img src={iconoTeatro} alt="teatro" /></Link>
                     <p>teatro</p>
 
                 </div>
@@ -39,8 +41,12 @@ function PortadaHome() {
 
                 </div> */}
                 <div>
-                    <Link to='/home/sobreGerontovida'>  <img src={iconoQuienes} alt="" /></Link>
+                    <Link to='/home/sobreGerontovida'>  <img src={iconoQuienes} alt="quiénes somos" /></Link>
                     <p>quiénes </p>
+                </div>
+                <div>
+                    <Link to='/home/contacto'>  <img src={iconoContacto} alt="contacto" /></Link>
+                    <p>contacto </p>
                 </div>
             </div>
         </Encabezado>

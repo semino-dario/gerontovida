@@ -36,11 +36,18 @@ export const ScrollHorizontal = (props) => {
                 <Container className="ContainerClass" ref={containerRef} onScroll={() => { showButtons() }}>
                     {contenido}
                 </Container>
+
                 <ContenedorBotones>
                     <LeftButton style={{ opacity: !showLeftButton ? '0' : '1', transform: 'rotateZ(180deg)', marginBottom: '-18px' }} onClick={scrollLeftHandler}> <img src={flechaDerecha} alt="" />
                     </LeftButton>
                     <RightButton style={{ opacity: showRightButton ? '1' : '0' }} onClick={scrollRightHandler}><img src={flechaDerecha} alt="" /></RightButton>
                 </ContenedorBotones>
+
+                {/* <ContenedorBotones>
+                    <LeftButton style={{ opacity: !showLeftButton ? '0' : '1', transform: 'rotateZ(180deg)', marginBottom: '-18px' }} onClick={scrollLeftHandler}> <img src={flechaDerecha} alt="" />
+                    </LeftButton>
+                    <RightButton style={{ opacity: showRightButton ? '1' : '0' }} onClick={scrollRightHandler}><img src={flechaDerecha} alt="" /></RightButton>
+                </ContenedorBotones> */}
             </ContenedorNoticia >
         </>
     );
@@ -101,7 +108,6 @@ width:27rem;
 height:30rem;
 scroll-snap-align: start; 
 margin-bottom:30px;
-
 
 img{
 height:100%;

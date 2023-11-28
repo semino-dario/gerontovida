@@ -23,6 +23,7 @@ export function Noticias() {
             <NotaSemino />
             {noticia.length > 0 &&
                 (
+
                     <ScrollHorizontal
                         contenido={[...noticia].reverse().map((item, index) => (
                             item.author !== "Eugenio Semino" && (

@@ -41,23 +41,27 @@ export default function Articulo({ encabezado }) {
         <>
             {preloder ?
                 <Preloder /> :
-                <SeccionArticulo style={{ opacity: mostrarPantalla ? '0' : '1' }}>
-                    <Portada />
-                    {noticia.length > 0 && (
-                        <div id={encabezado}><br />
-                            <img className="img-fluid img-thumbnail" src={articulo.imageUrl} alt="" />
-                            <br /> <br />
-                            <h2>{articulo.title}</h2>
-                            <hr />
-                            <h4>{articulo.author}</h4>
-                            <hr />
-                            <div className="text-start p-3 texto" dangerouslySetInnerHTML={createMarkup(articulo.content)} />
-                        </div>)}
-                    <div className="mb-4">
-                        <Link to="/home/noticias"> <Button variant="outline-dark">Volver</Button> </Link>
-                    </div>
+                <>
+                    <SeccionArticulo style={{ opacity: mostrarPantalla ? '0' : '1' }}>
+                        <Portada />
+                        {noticia.length > 0 && (
+                            <div id={encabezado}><br />
+                                <img className="img-fluid img-thumbnail" src={articulo.imageUrl} alt="" />
+                                <br /> <br />
+                                <h2>{articulo.title}</h2>
+                                <hr />
+                                <h4>{articulo.author}</h4>
+                                <hr />
+                                <div className="text-start p-3 texto" dangerouslySetInnerHTML={createMarkup(articulo.content)} />
+                            </div>)}
+                        <div className="mb-4">
+                            <Link to="/home/noticias"> <Button variant="outline-dark">Volver</Button> </Link>
+                        </div>
+                    </SeccionArticulo>
                     <Footer />
-                </SeccionArticulo>}
+                </>
+            }
+
         </>
     )
 }
