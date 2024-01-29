@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import { MyLoader, MyLoader2 } from "./Skeleton";
+import { MyLoader } from "./Skeleton";
 
 
 export default function SkeletonLoader() {
     return (
         <Loader>
             <div className="big-screen">
-                <div className="long-loader">
+                {/* <div className="long-loader">
                     <MyLoader2 />
-                </div>
+                </div> */}
                 <div className="short-loaders">
                     <MyLoader />
                     <MyLoader />

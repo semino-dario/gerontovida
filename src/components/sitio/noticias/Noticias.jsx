@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import NotaSemino from "./NotaSemino";
 import { ScrollHorizontal } from "../ScrollHorizontal";
 import PortadaNoticia from "./PortadaNoticia";
 import SkeletonLoader from "../../SkeletonLoader";
@@ -20,18 +19,19 @@ export function Noticias() {
     }
     return (
         <div id="noticias" >
-            <NotaSemino />
+            <br />
             {noticia.length > 0 &&
                 (
-
                     <ScrollHorizontal
                         contenido={[...noticia].reverse().map((item, index) => (
                             item.author !== "Eugenio Semino" && (
-                                < PortadaNoticia key={index}
-                                    imagen={item.imageUrl}
-                                    titulo={item.title}
-                                    autor={item.author}
-                                    articulo={`/articulo/${item._id}`} />
+                                <div key={index}>
+                                    < PortadaNoticia
+                                        imagen={item.imageUrl}
+                                        titulo={item.title}
+                                        autor={item.author}
+                                        articulo={`/articulo/${item._id}`} />
+                                </div>
                             )
                         ))
                         }

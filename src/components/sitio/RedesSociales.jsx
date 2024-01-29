@@ -30,10 +30,8 @@ display: flex;
 align-items: center;
 justify-content:center;
 gap: 20px;
-    padding: 1%;
     width: 20%;
     margin-left: 100px;
-    padding-top:3%;
 
 img{
   height: 25px;
@@ -51,8 +49,6 @@ a{
   }
 }
 
-.logoGeronto{
-  height: 50px;
-}
+
 
 `

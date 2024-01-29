@@ -43,7 +43,8 @@ function Navbar() {
       </div>
       <div ref={itemsNav} className={`contenedor-items ${clicked ? 'active' : ''}`}>
         <NavLink className="navlink" to='/home/noticias' onClick={() => { cierraContenedor(); scrollToSection("noticias"); }}> <TextoLink> Noticias </TextoLink></NavLink>
-        <NavLink className="navlink" to='/home/actividades' onClick={() => { cierraContenedor(); scrollToSection("actividades") }}> <TextoLink> Actividades</TextoLink></NavLink>
+        <NavLink className="navlink" to='/home/consultorio' onClick={() => { cierraContenedor(); scrollToSection("consultorio") }}> <TextoLink> Consultorio Gerontológico</TextoLink></NavLink>
+        <NavLink className="navlink" to='/home/capacitacion' onClick={() => { cierraContenedor(); scrollToSection("capacitacion") }}> <TextoLink> Capacitaciones</TextoLink></NavLink>
         <NavLink className="navlink" to='/home/canasta' onClick={() => { cierraContenedor(); scrollToSection("canasta"); }}> <TextoLink>Canasta de los Jubilados</TextoLink></NavLink>
         <NavLink className="navlink" to='/home/teatro' onClick={() => { cierraContenedor(); scrollToSection("teatro"); }}> <TextoLink>Teatro</TextoLink></NavLink>
         {/* <NavLink className="navlink" to='/home/videos' onClick={() => { cierraContenedor(); scrollToSection("videos"); }}><TextoLink> Videos</TextoLink></NavLink> */}
@@ -94,6 +95,8 @@ width:100%;
 }
 .contenedor-logo{
   margin-top:1px;
+  display: flex;
+  align-items:center;
 }
 
 .logo-geronto{

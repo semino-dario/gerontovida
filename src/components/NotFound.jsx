@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { ContenedorGeneral } from "./Contenedor";
-import BotonSesion from "./sesion/BotonSesion";
 import error from '../svg/error.svg'
 import { Link } from "react-router-dom";
-
+import { Button } from "react-bootstrap";
 
 export default function NotFound() {
 
@@ -20,9 +19,9 @@ export default function NotFound() {
                 </div>
                 <div>
                     <Link to="/home">
-                        <BotonSesion
-                            texto={"volver"}
-                        /></Link>
+                        <Button variant="dark"
+
+                        >Inicio</Button></Link>
                 </div>
                 <br />
             </ContenedorGeneral>

@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import RedesSociales from './RedesSociales';
+import footer from '../../svg/footer.svg'
+import footer2 from '../../imagenes/footer.jpg'
+
 function Footer() {
 
     return (
@@ -8,13 +11,14 @@ function Footer() {
             <div className="elementos-footer">
                 <h3>Estamos en contacto</h3>
 
-                <p> TE: 4455-43543</p>
-                <p> gerontoredes@gmail.com</p>
-                <p>Bartolomé Mitre XXX </p>
+                <p> info@gerontovida.org.ar</p>
                 <p> Ciudad Autónoma de Buenos Aires</p>
             </div>
             <div className='contenedor-redes'>
                 <RedesSociales />
+            </div>
+            <div className='imagen'>
+                <img src={footer2} alt="" />
             </div>
         </ContenedorFooter>
     )
@@ -28,7 +32,7 @@ display:flex;
 flex-direction: column;
 justify-content:center;
 align-items: center;
-padding: 4%;
+padding-top:3rem; 
 color:white;
 
 h3{
@@ -36,6 +40,8 @@ h3{
 
 .elementos-footer{
     width: 70%;
+    z-index:10;
+
 }
 
 Button{
@@ -46,6 +52,25 @@ Button{
     background-color: #EFEADD;
     border-radius: 30px;
     padding: 5px;
+    z-index:10;
+}
+
+.imagen{
+    margin-top:-10rem;
+    width: 35rem;
+
+}
+
+.imagen img{
+    width:100%;
+}
+
+@media(max-width: 768px) {
+    .imagen{
+        margin-top:-5rem;
+
+        width: 20rem;
+    
 }
 
 `

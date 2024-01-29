@@ -10,6 +10,7 @@ import Preloder from "../../Preloder";
 import axios from "axios";
 import BotonDescarga from "../../BotonDescarga";
 import { Link } from "react-router-dom";
+import { MyLoader2, MyLoader3 } from "../../Skeleton";
 
 
 function Canasta() {
@@ -20,6 +21,7 @@ function Canasta() {
   const [id, setId] = useState(null)
   const [rubros, setRubros] = useState(null)
   const [totalCanasta, setTotalCanasta] = useState(null);
+
 
   let rubrosFinal = [];
   let listaCanastasAnteriores
@@ -39,7 +41,7 @@ function Canasta() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios(`${process.env.REACT_APP_API_URL}canastas`)
+        const response = await axios("https://api-contenidos.cyclic.app/api/v1/canastas")
         const data = response.data.data
 
         const latestCanasta = data[data.length - 1];
@@ -57,6 +59,7 @@ function Canasta() {
       }
     }
     fetchData()
+
   }, [])
 
 
@@ -97,8 +100,10 @@ function Canasta() {
 
   if (DataCanasta === undefined) {
     return (
-      <Preloder />
-    )
+      <ContenedorGeneral style={{ backgroundColor: 'white', borderColor: '#f30000', height: '800px', alignItems: 'center', justifyContent: 'center' }}
+      >
+        <Preloder />
+      </ContenedorGeneral>)
   }
 
   /////////////////////////////////////////////////////////////////////////////////////////
@@ -108,73 +113,70 @@ function Canasta() {
 
   return (
     <ContenedorCanasta>
-      {DataCanasta === undefined ?
-        <Preloder />
-        :
-        <ContenedorGeneral
-          style={{ backgroundColor: 'white', borderColor: '#f30000' }}
-          id="canasta" >
-          <br />
-          <CanastaJubilados>
-            <div className="titulo-canasta">
-              <h1>Canásta Básica de los Jubilados</h1>
-              <p className="texto-canasta">
-                Calculada dos veces por año por la Defensoría de la Tercera Edad de la
-                Ciudad de Buenos Aires.
-              </p>
-              <h3 className="total-canasta">
-                Total Canasta: $ {totalCanasta}
-              </h3>
-              <h4>Período: {periodo}</h4>
-            </div>
-            <div className="graficos">
-              <div className="canasta-barra-torta">
-                <div className="torta">
-                  <h6>Composición de la Canasta por rubros</h6>
-                  <p> - cifras expresadas en pesos argentinos - </p>
-                </div>
-                <PieChart
-                  ultimaCanastaTorta={ultimaCanastaTorta}
-                  categorias={rubrosFinal}
-                  total={totalCanasta}
-                />
+
+      <ContenedorGeneral
+        style={{ backgroundColor: 'white', borderColor: '#f30000' }}
+        id="canasta" >
+        <br />
+        <CanastaJubilados>
+          <div className="titulo-canasta">
+            <h1>Canásta Básica de los Jubilados</h1>
+            <p className="texto-canasta">
+              Calculada dos veces por año por la Defensoría de la Tercera Edad de la
+              Ciudad de Buenos Aires.
+            </p>
+            <h3 className="total-canasta">
+              Total Canasta: $ {totalCanasta}
+            </h3>
+            <h4>Período: {periodo}</h4>
+          </div>
+          <div className="graficos">
+            <div className="canasta-barra-torta">
+              <div className="torta">
+                <h6>Composición de la Canasta por rubros</h6>
+                <p> - cifras expresadas en pesos argentinos - </p>
               </div>
-              <div className="comparacion-acordeon">
-                <div className="torta">
-                  <div className="comparacion">
-                    <h6>Comparación entre Jubilación Mínima y Canasta Básica</h6>
-                    <HorizontalBarChart
-                      jubilacionMinima={jubilacionMinima}
-                      ultimaCanasta={totalCanasta}
-                    />
-                  </div>
-                </div>
-                <div className="contenedor-acordeon">
-                  <Accordion className="acordeon">
-                    <Accordion.Item eventKey="0">
-                      <Accordion.Header className="header">Ver mediciones anteriores</Accordion.Header>
-                      <Accordion.Body className="body">
-                        <div className="contenedor-fechas">
-                          <CanastasAnteriores lista1={listaCanastasAnteriores} />
-                        </div>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                  </Accordion>
-                </div>
-              </div>
-            </div>
-            <div className="my-5 boton">
-              <BotonDescarga
-                id={id}
-                periodo={periodo}
-                texto={'descargar pdf'}
+              <PieChart
+                ultimaCanastaTorta={ultimaCanastaTorta}
+                categorias={rubrosFinal}
+                total={totalCanasta}
               />
             </div>
+            <div className="comparacion-acordeon">
+              <div className="torta">
+                <div className="comparacion">
+                  <h6>Comparación entre Jubilación Mínima y Canasta Básica</h6>
+                  <HorizontalBarChart
+                    jubilacionMinima={jubilacionMinima}
+                    ultimaCanasta={totalCanasta}
+                  />
+                </div>
+              </div>
+              <div className="contenedor-acordeon">
+                <Accordion className="acordeon">
+                  <Accordion.Item eventKey="0">
+                    <Accordion.Header className="header">Ver mediciones anteriores</Accordion.Header>
+                    <Accordion.Body className="body">
+                      <div className="contenedor-fechas">
+                        <CanastasAnteriores lista1={listaCanastasAnteriores} />
+                      </div>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+              </div>
+            </div>
+          </div>
+          <div className="my-5 boton">
+            <BotonDescarga
+              id={id}
+              periodo={periodo}
+              texto={'descargar pdf'}
+            />
+          </div>
 
-          </CanastaJubilados>
+        </CanastaJubilados>
 
-        </ContenedorGeneral>
-      }
+      </ContenedorGeneral>
     </ContenedorCanasta>
   );
 
@@ -185,7 +187,6 @@ export default Canasta;
 
 const ContenedorCanasta = styled.div`
 
-        margin-bottom:10%;
         `
 
 const CanastaJubilados = styled.div`
@@ -355,9 +356,7 @@ const CanastaJubilados = styled.div`
           width:30rem;
   }
 
-        .comparacion{
-
-        }
+       
 }
 
 

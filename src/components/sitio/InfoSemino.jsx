@@ -9,7 +9,7 @@ export default function InfoSemino() {
 
     <SeccionColumna id="semino">
       <ContenedorGeneral
-        style={{ borderColor: '#008900', maxWidth: "800px" }}
+        style={{ borderColor: '#008900' }}
       >
         <ContainerColumna>
           <div className='encabezado'>

@@ -1,39 +1,32 @@
 import { ContenedorGeneral } from '../../Contenedor';
-import SeminoColumna from '../../../imagenes/imagen-semino.webp'
+import imprevistos from '../../../imagenes/imprevistos.jpg'
 import styled from 'styled-components';
 import { Image } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 export default function NotaSemino() {
-    const noticia = useSelector((state) => state.noticia.data);
-    let noticiaSemino = []
 
-    noticia.map(item => {
-        item.author === "Eugenio Semino" && (
-            noticiaSemino.push(item)
-        )
-    }
-    )
+
     return (
         <ColumnaSemino>
-            {noticiaSemino.length > 0 && (
-                <Link className='link' to={`/articulo/${noticiaSemino[noticiaSemino.length - 1]._id}/encabezado`}>
-                    <ContenedorGeneral className='contenedor-semino'>
+            <Link className='link' to="/notas-semino" >
+                <ContenedorGeneral className='contenedor-semino'>
 
-                        <div className="semino-texto">
-                            <div >
-                                <h3>{noticiaSemino[noticiaSemino.length - 1].title}</h3>
-                            </div>
+                    <div className="semino-texto">
+                        <div >
+                            <h3>Cuarenta años de imprevistos</h3>
                             <br />
-                            <div>
-                                <h5> La columna del Dr. Eugenio Semino - Defensor de la Tercera Edad</h5>
-                            </div>
+                            <h5>La historia del sistema previsional argentino en democracia</h5>
                         </div>
-                        <div className="contenedor-imagen">
-                            <Image src={SeminoColumna} alt="Dr. Eugenio Semino" />
+                        <div>
+                            <h5> Dr. Eugenio Semino </h5>
+                            <br />
                         </div>
-                    </ContenedorGeneral> </Link>)}
+                    </div>
+                    <div className="contenedor-imagen">
+                        <Image src={imprevistos} alt="Dr. Eugenio Semino" />
+                    </div>
+                </ContenedorGeneral> </Link>
         </ColumnaSemino>
     )
 }
@@ -42,7 +35,7 @@ const ColumnaSemino = styled.div`
 .contenedor-semino{
     flex-direction: row;
     justify-content:space-between;
-    height: 210px;
+    height: 13.1em;
     background-color: #605555;
     border-color:#FFAA00;
     color:white;
@@ -51,6 +44,7 @@ const ColumnaSemino = styled.div`
 .contenedor-imagen{
     overflow: hidden;
     display:none;
+    border-radius: 0px 10px 10px 0px;
 }
 
 
@@ -62,25 +56,32 @@ img{
 }
 
 .semino-texto{
-    margin-left:30px;
-    padding-top:4%;
+    margin-left:2em;
+    padding-top:2%;
     display: flex;
     max-witdh:100%;
     flex-direction: column;
     text-align:left;
     overflow: hidden;
+    font-size: 0.9em;
 }
 
 .link{
     text-decoration:none;
     color:white;
-    margin-top:20px;
+    margin-top:1.2em;
 }
 
 
 @media (min-width: 1023px) {
 .contenedor-imagen {
 display:block;}
+}
+
+@media (max-width: 650px){
+    .semino-texto{
+        margin-left:0.8em;
+    }
 }
 
 `

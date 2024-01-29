@@ -1,6 +1,7 @@
 import { ContenedorObra, ScrollHorizontal } from './ScrollHorizontal'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import todavia from '../../svg/todavia.svg'
 
 export default function Teatro() {
 
@@ -13,10 +14,14 @@ export default function Teatro() {
 
     return (
 
-        <>
-            <ContenedorScroll>
-                <h4 id='teatro'>Ciclo de obras teatro "Todavía algo que decir"</h4>
+        <div id='teatro'>
+            <ContenedorScroll >
                 <br />
+                <div className='portada'>
+                    <img className='mascara' src={todavia} alt="" />
+                    <p className='cartelTeatro'>Ciclo de obras breves escritas por Silvia Perelis, directora del Espacio Gerontovida. El objetivo del ciclo es la puesta en escena sobre vivencias de la vejez y del envejecer para promover el debate con la comunidad. </p>
+                    <br />
+                </div>
                 <ScrollHorizontal
                     contenido={[...obras].reverse().map((item, index) =>
                         <ContenedorObra key={index}>
@@ -27,7 +32,7 @@ export default function Teatro() {
             </ContenedorScroll>
             <hr />
             <br />
-        </>
+        </div>
 
     )
 }
@@ -37,4 +42,33 @@ const ContenedorScroll = styled.div`
 display:flex;
 flex-direction:column;
 
+.portada{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    padding: 5px;
+}
+
+.tituloCartel{
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+    justify-content:center;
+    align-items:center;
+}
+
+.mascara{
+    max-width:800px;
+}
+
+.cartelTeatro{
+border: solid 1px black;
+border-radius:10px;
+max-width: 600px;
+min-width: 340px;
+padding: 1%;
+}
+
 `
+

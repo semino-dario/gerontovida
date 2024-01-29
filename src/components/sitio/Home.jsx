@@ -1,5 +1,4 @@
 import React from 'react';
-import Actividades from "./Actividades"
 import Canasta from "./canasta/Canasta"
 import QuienesSomos from "./QuienesSomos"
 import { useParams } from 'react-router-dom';
@@ -12,6 +11,11 @@ import { Noticias } from './noticias/Noticias';
 //import Videos from './Videos';
 import Teatro from './Teatro';
 import PortadaHome from './PortadaHome';
+import EncuentroGerontovida from './EncuentroGerontovida';
+import NotaSemino from './noticias/NotaSemino';
+import ScrollConsultorio from './ScrollConsultorio';
+import ScrollCapacitacion from './capacitacion/scrollCapacitacion';
+import Preloder from '../Preloder';
 
 
 export default function Home() {
@@ -39,8 +43,13 @@ export default function Home() {
         <>
             <ContainerHome style={{ opacity: mostrarPantalla ? '0' : '1' }}>
                 <PortadaHome />
+                <EncuentroGerontovida />
+                <br />
+                <h3>Noticias</h3>
+                <NotaSemino />
                 <Noticias />
-                <Actividades />
+                <ScrollConsultorio />
+                <ScrollCapacitacion />
                 <Canasta />
                 <Teatro />
                 <QuienesSomos />

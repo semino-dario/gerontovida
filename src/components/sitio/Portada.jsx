@@ -22,7 +22,7 @@ border-bottom: solid 2px #0749E0;
 margin-top:1%;
 
 .imagen{
-    width:500px;
+    width:550px;
     margin-top:0;
 }
 

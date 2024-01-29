@@ -2,11 +2,12 @@ import styled from 'styled-components';
 import ImagenPortada from '../../svg/portada3.svg';
 import { Link } from "react-router-dom"
 import iconoTeatro from '../../svg/iconoTeatro.svg'
-import iconoActividades from '../../svg/iconoActividades.svg'
 import iconoNoticias from '../../svg/iconoNoticias.svg'
 import iconoCanasta from '../../svg/iconoCanasta.svg'
 import iconoQuienes from '../../svg/iconoQuienes.svg'
 import iconoContacto from '../../svg/contacto.svg'
+import iconoConsultorio from '../../svg/consultorio.svg'
+import iconoCapacitacion from '../../svg/capacitacion.svg'
 
 //import iconoTV from '../../svg/iconoTV.svg'
 
@@ -18,20 +19,25 @@ function PortadaHome() {
             <Link to="/home"><img className="imagen" src={ImagenPortada} alt="Gerontovida" /></Link>
             <div className="contenedorIconos">
                 <div>
-                    <Link to='/home/noticias'> <img src={iconoNoticias} alt="noticias" /> </Link>
+                    <Link to='/home/noticias'> <img className='icono' src={iconoNoticias} alt="noticias" /> </Link>
                     <p>noticias</p>
                 </div>
                 <div>
-                    <Link to='/home/actividades' >  <img src={iconoActividades} alt="actividades" /> </Link>
-                    <p>actividades</p>
+                    <Link to='/home/consultorio' >  <img className='icono' src={iconoConsultorio} alt="consultorio gerontológico" /> </Link>
+                    <p>consultorio</p>
 
                 </div>
                 <div>
-                    <Link to='/home/canasta' >    <img src={iconoCanasta} alt="canasta" /></Link>
+                    <Link to='/home/capacitacion' >  <img className='icono' src={iconoCapacitacion} alt="capacitación" /> </Link>
+                    <p>capacitación</p>
+
+                </div>
+                <div>
+                    <Link to='/home/canasta' >    <img className='icono' src={iconoCanasta} alt="canasta" /></Link>
                     <p>canasta </p>
                 </div>
                 <div>
-                    <Link to='/home/teatro'><img src={iconoTeatro} alt="teatro" /></Link>
+                    <Link to='/home/teatro'><img className='icono' src={iconoTeatro} alt="teatro" /></Link>
                     <p>teatro</p>
 
                 </div>
@@ -41,11 +47,11 @@ function PortadaHome() {
 
                 </div> */}
                 <div>
-                    <Link to='/home/sobreGerontovida'>  <img src={iconoQuienes} alt="quiénes somos" /></Link>
+                    <Link to='/home/sobreGerontovida'>  <img className='icono' src={iconoQuienes} alt="quiénes somos" /></Link>
                     <p>quiénes </p>
                 </div>
                 <div>
-                    <Link to='/home/contacto'>  <img src={iconoContacto} alt="contacto" /></Link>
+                    <Link to='/home/contacto'>  <img className='icono' src={iconoContacto} alt="contacto" /></Link>
                     <p>contacto </p>
                 </div>
             </div>
@@ -60,23 +66,29 @@ const Encabezado = styled.div`
 background-color: #EFEADD;
 width:100%;
 display:flex;
-justify-content:space-between;
+justify-content:center;
 flex-direction:column;
+align-items:center;
+
 border-bottom: solid 2px #0749E0;
 
 .imagen{
     width:360px;
-    margin-top:7%;
+    margin-top: 40px;
 }
 
 .contenedorIconos{
     display:none;
 }
 
+.icono{
+width: 3rem;
+}
+
 @media (min-width: 500px) {
 
     .imagen{
-        width:500px;
+        width:35rem;
     } 
    }
 
@@ -96,6 +108,7 @@ border-bottom: solid 2px #0749E0;
    .imagen{
     margin-top:30px;
     margin-bottom:-30px;
+    margin-left:-4rem;
    }
 }
 
