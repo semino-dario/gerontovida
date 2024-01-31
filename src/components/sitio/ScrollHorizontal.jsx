@@ -79,7 +79,7 @@ const Button = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 40px;
+  font-size: 3rem;
 `;
 
 const LeftButton = styled(Button)`

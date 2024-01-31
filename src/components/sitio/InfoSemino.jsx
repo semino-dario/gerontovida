@@ -1,98 +1,56 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
-import ImagenSemino from '../../imagenes/semino.png';
-import { ContenedorGeneral } from '../Contenedor';
+import ImagenSemino from '../../imagenes/retrato-semino.jpg';
+import ImagenSilvia from '../../imagenes/consultorio/silvia.jpg'
+import TarjetaQuienesSomos from './TarjetaQuinesSomos';
 
 export default function InfoSemino() {
+
+  const data = [{ nombre: 'Eugenio Semino', cargo: 'Defensor de la Tercera Edad', imagen: ImagenSemino, descripcion: 'El Dr. Eugenio Semino es Defensor de la Tercera Edad de la Ciudad de Buenos Aires, Presidente de la Sociedad Iberoamericana de Gerontología y Geriatría (SIGG) y miembro fundador de la Asociación Civil Años - Espacio Gerontovida. Semino ha trabajado incansablemente para proteger los derechos de las personas mayores y promover una vejez activa y saludable. A lo largo de una extensa carrera ha logrado consolidarse como una voz influyente en la lucha contra el maltrato y la discriminación hacia las personas mayores, abogando por una distribución justa de los recursos y un sistema de seguridad social más equitativo en la República Argentina.' }, { nombre: 'Silvia Perelis', cargo: 'Presidente de Gerontovida', descripcion: 'Silvia Perelis, (Buenos Aires, Argentina1966) se licenció en psicología en la UBA y hace un postgrado en Gerontología Social con la Universidad Autónoma de Madrid. Desde antes de graduarse, como estudiante, comienza su carrera en políticas sociales, trabajando con niños en situación de calle, barrios vulnerables, servicio social de la entonces municipalidad de Buenos Aires (actual Ciudad Autónoma). Ya recibida comienza a trabajar en la Oficina del Ombudsman (actual Defensoría del Pueblo de la Ciudad Autónoma de Buenos Aires) defendiendo los Derechos de las Personas Mayores. Dirige la Red Iberoamericana de Asociaciones de Adultos Mayores, recorriendo la mayoría de los países de Iberoamérica. En paralelo a dicha labor, integra la ONG Asociación Civil Años, conocida como Espacio Gerontovida que dirige desde hace varios años hasta la actualidad. Es autora del ciclo de teatro: “Todavía algo que decir” compuesto por obras cortas, y que referidas a temas gerontológicos, se representan para la difusión y defensa de los Derechos de las Personas Mayores y del buen envejecimiento.', imagen: ImagenSilvia }]
+
   return (
 
     <SeccionColumna id="semino">
-      <ContenedorGeneral
-        style={{ borderColor: '#008900' }}
-      >
-        <ContainerColumna>
-          <div className='encabezado'>
-            <div className='container-contenido'>
-              <h1>Dr. Eugenio Semino</h1>
-              <p>Defensor de la Tercera Edad</p>
-            </div>
-            <div className='container-imagen'>
-              <img alt="Eugenio Semino" src={ImagenSemino} />
-            </div>
-          </div>
-          <hr />
-          <div className='px-3 '>
-            <p>El Dr. Eugenio Semino es Defensor de la Tercera Edad de la Ciudad de Buenos Aires, Presidente de la Sociedad Iberoamericana de Gerontología y Geriatría (SIGG) y miembro fundador de la Asociación Civil Años - Espacio Gerontovida. <br /> <br />
-              Semino ha trabajado incansablemente para proteger los derechos de las personas mayores y promover una vejez activa y saludable. A lo largo de una extensa carrera ha logrado consolidarse como una voz influyente en la lucha contra el maltrato y la discriminación hacia las personas mayores, abogando por una distribución justa de los recursos y un sistema de seguridad social más equitativo en la República Argentina.</p>
-          </div>
-          <div className='my-3 text-center'>
-            <a href='/pdf/nominacion.pdf' target="_blank">
-              <Button variant="outline-success">Ver Designación </Button> </a>
-          </div>
-          <hr />
-          <div className='p-3'>
-            <p> <small>
-              IMPORTANTE: El Dr. Semino no realiza trámites ni gestiones a título personal o profesional, ni autoriza a terceros a hacerlos en su nombre ante organismos como PAMI o ANSES. Todas las actuaciones en las que interviene se llevan a cabo a través de la Defensoría del Pueblo de la Ciudad de Buenos Aires.</small>
-            </p>
 
-          </div>
-        </ContainerColumna>
-      </ContenedorGeneral>
+      <div className='contenedor'>
+        <TarjetaQuienesSomos
+          nombre={data[1].nombre}
+          cargo={data[1].cargo}
+          descripcion={data[1].descripcion}
+          imagen={data[1].imagen}
+          importante={false}
+        />
+
+        <TarjetaQuienesSomos
+          nombre={data[0].nombre}
+          cargo={data[0].cargo}
+          descripcion={data[0].descripcion}
+          imagen={data[0].imagen}
+          importante={true}
+        />
+      </div>
     </SeccionColumna>
   );
-
 }
 
 const SeccionColumna = styled.div`
-display:flex;
-justify-content:center;
-align-intems:center;
-margin-bottom: 10%;
-margin-top: 10%;
-text-align:left;
-`
-const ContainerColumna = styled.div`
-display:flex;
+display: flex;
 flex-direction:column;
-margin-top: 5%;
-color:grey;
-padding-top: 20px;
-padding-bottom:5px;
+justify-content: center;
+align-items: center;
+margin: 5% auto;
+width:95%;
 
-.encabezado{
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:20px;
-text-align:center;
+.contenedor{
+  display:flex;
+  justify-content:center;
+  gap: 2rem;
 }
 
-h1{
- color:#008900;
-}
-img{
-  margin-top: -60px;
-  margin-bottom: -70px;
-  object-fit:cover;
-  width: 100%;
-}
-
-.container-imagen{
-width: 250px;
-}
-
-
-h5{
-  color:#008900;
-}
-
-.container-contenido{
-  margin-top:30px;
-}
-
-.fotos{
-  padding:8% 2%;
- 
+@media(max-width: 1100px){
+  .contenedor{
+    flex-direction:column;
+  }
 }
 `
+
