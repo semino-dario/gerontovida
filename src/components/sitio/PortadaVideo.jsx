@@ -1,16 +1,15 @@
 import { ContenedorGeneral } from "../Contenedor";
-import encuentro from "../../imagenes/encuentro.jpg"
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export default function EncuentroGerontovida() {
+export default function PortadaVideo({ video }) {
 
     return (
         <SeccionCartel>
             <ContenedorGeneral>
 
                 <div>
-                    <Link to="/video-congreso-2023"> <img className="imagen" src={encuentro} alt="" /> </Link>
+                    <Link to="/video-congreso-2023"> <img className="imagen" src={video} alt="" /> </Link>
 
                 </div>
             </ContenedorGeneral>

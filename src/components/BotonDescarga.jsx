@@ -45,7 +45,7 @@ export default function BotonDescarga(props) {
 
     return (
         <>
-            <Col sm> <Button variant="dark" onClick={handleShow}>
+            <Col sm> <Button variant="primary" onClick={handleShow}>
                 {texto}       </Button></Col>
 
             <Modal show={show} onHide={handleClose}>

@@ -39,12 +39,12 @@ export default function VideoEncuentro() {
                                     </div>
                                     :
                                     <div className="contenedor-video">
-                                        <iframe src="https://www.youtube.com/embed/4ENeBTE13cI?si=d17sbbdWubootgnl" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/7HTDet30Uuo?si=WnvyeH5FtmhPHxLw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                                     </div>}
                             </div>
                             <div>
                                 <br />
-                                <h3>Congreso Gerontovida 2023</h3>
+                                <h3>Congreso Gerontovida 1990 - 2023</h3>
                                 <hr /> <br />
                                 <p></p>
                             </div>

@@ -11,11 +11,12 @@ import { Noticias } from './noticias/Noticias';
 //import Videos from './Videos';
 import Teatro from './Teatro';
 import PortadaHome from './PortadaHome';
-import EncuentroGerontovida from './EncuentroGerontovida';
+import PortadaVideo from './PortadaVideo';
 import NotaSemino from './noticias/NotaSemino';
 import ScrollConsultorio from './ScrollConsultorio';
 import ScrollCapacitacion from './capacitacion/scrollCapacitacion';
-import Preloder from '../Preloder';
+import encuentro from "../../imagenes/encuentros.jpg"
+import VideoNoticias from './VideoNoticias';
 
 
 export default function Home() {
@@ -43,11 +44,14 @@ export default function Home() {
         <>
             <ContainerHome style={{ opacity: mostrarPantalla ? '0' : '1' }}>
                 <PortadaHome />
-                <EncuentroGerontovida />
+                <PortadaVideo
+                    video={encuentro}
+                />
                 <br />
                 <h3>Noticias</h3>
-                <NotaSemino />
                 <Noticias />
+                <VideoNoticias />
+                <NotaSemino />
                 <ScrollConsultorio />
                 <ScrollCapacitacion />
                 <Canasta />
