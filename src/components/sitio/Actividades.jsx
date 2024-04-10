@@ -8,19 +8,19 @@ import Row from 'react-bootstrap/Row';
 import Accordion from 'react-bootstrap/Accordion';
 import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom"
-import imagen from "../../imagenes/actividad.png"
+import imagen from "../../imagenes/encuentro-24.jpg"
 function Actividades() {
 
   return (
 
     <SeccionActividades id="actividades" >
       <ContenedorGeneral className="px-1 py-3 mb-3 contenedor-general">
-        <h1  >Consultorio<br /> Gerontológico </h1>
+        <h1  >Video del Conversatorio </h1>
         <br />
         <Container className="container-acordeon">
           <Row>
             <Col>
-              <Link to="/consultorio-gerontologico">  <Image src={imagen} rounded /> </Link>
+              <Link to="//video-congreso-2023">  <Image src={imagen} rounded /> </Link>
             </Col>
           </Row>
           <Accordion className='pb-2'>
@@ -28,25 +28,19 @@ function Actividades() {
               <Accordion.Header className="header mb-0">VER MÁS INFORMACIÓN</Accordion.Header>
               <Accordion.Body>
                 <div className='contenido'>
-                  <h5>Sabemos que estás desbordado. Sentís angustia, tristeza, enojo y cansancio. La obra social y la prepaga son rompecabezas incompletos, las tensiones familiares aumentan. Podemos orientarte, brindarte las piezas que faltan y acomodar las que tenés.</h5>
+                  <h5>El Dr. Eugenio Semino conversará con los periodistas Ismael Bermúdez y Silvia Stang, ambos especializados en temas previsionales, sobre la situación actual de las jubilaciones y sobre los desafíos que se acercan en un contexto tan adverso.</h5>
                   <hr />
-                  <h5>Valores</h5>
+                  <h5>Horario</h5>
                   <p>
-                    Nuestros principales valores son la profesinalidad, la empatía y el valor humano. Te acompañamos.
+                    9 de abril de 15 a 17:30 hs
                   </p> <hr />
-                  <h5>Servicios</h5>
+                  <h5>Lugar</h5>
                   <p>
-                    Te atienden profesionales de diversas disciplinas:</p>
-                  <ul>
-                    <li>Gerontología</li>
-                    <li>Geriatría</li>
-                    <li>Evolución cognitiva</li>
-                  </ul>
-                  <hr />
+                    Abra Cultural - Hipólito Yrigoyen 840, Ciudad de Buenos Aires                  </p> <hr />
+                  <h5>Inscripción</h5>
                   <p>
-                    Te vinculamos con organizaciones de cuidadores </p>
-                  <hr />
-                  <Link to="/consultorio-gerontologico"> <Button > Ver servicios </Button> </Link>
+                    gerontoredes@gmail.com
+                  </p> <hr />
                 </div>
               </Accordion.Body>
             </Accordion.Item>

@@ -32,20 +32,19 @@ export default function VideoEncuentro() {
                     <SeccionVideo>
                         <Portada />
                         <ContenedorGeneral className="contenedor">
-                            <div className="marco">
-                                {!verVideo ?
-                                    <div className="contenedor-video">
-                                        <img className="play" src={play} onClick={() => setVerVideo(true)} alt="" />
-                                    </div>
-                                    :
-                                    <div className="contenedor-video">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/7HTDet30Uuo?si=WnvyeH5FtmhPHxLw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                                    </div>}
-                            </div>
+
+                            {!verVideo ?
+                                <div className="contenedor-video">
+                                    <img className="play" src={play} onClick={() => setVerVideo(true)} alt="" />
+                                </div>
+                                :
+                                <div className="contenedor-video">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QT9ntw_ClHE?si=4kYN10X0gZS_AjIF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                                </div>}
+
                             <div>
-                                <br />
-                                <h3>Congreso Gerontovida 1990 - 2023</h3>
-                                <hr /> <br />
+                                <h3>Primer conversatorio del año - 09/04/2024</h3>
+                                <hr />
                                 <p></p>
                             </div>
                         </ContenedorGeneral>
@@ -68,6 +67,7 @@ margin-bottom: 5%;
 .contenedor{
     background-color:black;
 
+
 }
 
 iframe{
@@ -77,26 +77,24 @@ iframe{
 
 h3{
     color: white;
+    padding:2%;
 }
 
 .contenedor-video{
     display: flex;
     flex-directon: column;
     justify-content:center;
-    align-items: center;
     border: solid 1px black;
 border-radius: 1%;
 height: 300px;
+
 }
 
 .play{
     cursor:pointer;
 }
 
-marco{
-border: solid 1px black;
-border-radius: 1%;
-}
+
 
 @media (min-width:630px) {
     iframe{

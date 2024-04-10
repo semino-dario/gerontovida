@@ -16,7 +16,11 @@ import NotaSemino from './noticias/NotaSemino';
 import ScrollConsultorio from './ScrollConsultorio';
 import ScrollCapacitacion from './capacitacion/scrollCapacitacion';
 import encuentro from "../../imagenes/encuentros.jpg"
-import VideoNoticias from './VideoNoticias';
+import VideoNoticias from './noticias/video-noticias/VideoNoticias';
+import { ContenedorGeneral } from "../Contenedor";
+import Actividades from './Actividades';
+import conversatorio from "../../imagenes/encuentro-24.jpg"
+
 
 
 export default function Home() {
@@ -44,16 +48,22 @@ export default function Home() {
         <>
             <ContainerHome style={{ opacity: mostrarPantalla ? '0' : '1' }}>
                 <PortadaHome />
-                <PortadaVideo
-                    video={encuentro}
-                />
+                <ContenedorGeneral className=''>
+                    <PortadaVideo
+                        video={conversatorio}
+                    />
+                </ContenedorGeneral>
+                <br />
+                <hr />
                 <br />
                 <h3>Noticias</h3>
                 <Noticias />
                 <VideoNoticias />
                 <NotaSemino />
+                <br /> <br />
                 <ScrollConsultorio />
                 <ScrollCapacitacion />
+                <br />
                 <Canasta />
                 <Teatro />
                 <QuienesSomos />
@@ -74,6 +84,9 @@ margin: 0 auto;
 
 }
 
+.contenedor-imagen{
+    width: 60%;
+}
 
 `
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import RedesSociales from './RedesSociales';
-import footer from '../../svg/footer.svg'
-import footer2 from '../../imagenes/footer.jpg'
+import footer from '../../imagenes/footer.jpg'
 
 function Footer() {
 
@@ -18,7 +17,7 @@ function Footer() {
                 <RedesSociales />
             </div>
             <div className='imagen'>
-                <img src={footer2} alt="" />
+                <img src={footer} alt="" />
             </div>
         </ContenedorFooter>
     )
@@ -58,6 +57,7 @@ Button{
 .imagen{
     margin-top:-10rem;
     width: 35rem;
+    z-index:1;
 
 }
 

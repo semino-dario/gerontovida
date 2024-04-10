@@ -7,7 +7,7 @@ export default function Teatro() {
 
     const obras = []
 
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 6; i++) {
         const imagenes = require(`../../imagenes/teatro/${i}.webp`)
         obras.push(imagenes)
     }

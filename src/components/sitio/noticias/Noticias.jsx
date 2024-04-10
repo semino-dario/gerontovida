@@ -26,11 +26,12 @@ export function Noticias() {
                         contenido={[...noticia].reverse().map((item, index) => (
                             item.author !== "Eugenio Semino" && (
                                 <div key={index}>
-                                    < PortadaNoticia
-                                        imagen={item.imageUrl}
-                                        titulo={item.title}
-                                        autor={item.author}
-                                        articulo={`/articulo/${item._id}`} />
+                                    {index < noticia.length - 9 &&
+                                        < PortadaNoticia
+                                            imagen={item.imageUrl}
+                                            titulo={item.title}
+                                            autor={item.author}
+                                            articulo={`/articulo/${item._id}`} />}
                                 </div>
                             )
                         ))

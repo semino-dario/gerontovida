@@ -57,7 +57,7 @@ padding-right: 5%;
 const Container = styled.div`
   display: flex;
   overflow-x: auto;
-  gap:30px;
+  gap:10px;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   ::-webkit-scrollbar {
@@ -104,6 +104,7 @@ margin-bottom:30px;
 
 img{
 height:100%;
+width:15rem;
 border-radius:10px;
 }
 `

@@ -1,7 +1,6 @@
 import { ContenedorGeneral } from '../../Contenedor';
 import imprevistos from '../../../imagenes/imprevistos.jpg'
 import styled from 'styled-components';
-import { Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default function NotaSemino() {
@@ -11,7 +10,9 @@ export default function NotaSemino() {
         <ColumnaSemino>
             <Link className='link' to="/notas-semino" >
                 <ContenedorGeneral className='contenedor-semino'>
-
+                    <div className="contenedor-imagen">
+                        <img src={imprevistos} alt="Dr. Eugenio Semino" />
+                    </div>
                     <div className="semino-texto">
                         <div >
                             <h3>Cuarenta años de imprevistos</h3>
@@ -23,9 +24,7 @@ export default function NotaSemino() {
                             <br />
                         </div>
                     </div>
-                    <div className="contenedor-imagen">
-                        <Image src={imprevistos} alt="Dr. Eugenio Semino" />
-                    </div>
+
                 </ContenedorGeneral> </Link>
         </ColumnaSemino>
     )
@@ -33,31 +32,30 @@ export default function NotaSemino() {
 
 const ColumnaSemino = styled.div`
 .contenedor-semino{
-    flex-direction: row;
-    justify-content:space-between;
-    height: 13.1em;
+    flex-direction: column;
+    justify-content:center;
+    min-height: 16em;
     background-color: #605555;
     border-color:#FFAA00;
     color:white;
+    background-color: #17130A;
 }
 
 .contenedor-imagen{
-    overflow: hidden;
-    display:none;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 10px 10px 0px 0px;
+    margin: 0 auto;
 }
 
 
 
 img{
-    object-fit:cover:
     width:100%;
-    height: 100%;
+    height: 250px;
+    object-fit:cover;
 }
 
 .semino-texto{
-    margin-left:2em;
-    padding-top:2%;
+    padding:2%;
     display: flex;
     max-witdh:100%;
     flex-direction: column;
@@ -73,16 +71,30 @@ img{
 }
 
 
-@media (min-width: 1023px) {
-.contenedor-imagen {
-display:block;}
+
+
+@media (min-width: 650px){
+.contenedor-semino{
+    flex-direction: row;
+    align-items: center;
 }
 
-@media (max-width: 650px){
-    .semino-texto{
-        margin-left:0.8em;
-    }
+img{
+    height:80%;
+    border-radius:10px;
+
 }
+
+.contenedor-imagen{
+    border-radius:10px;
+}
+}
+
+
+
+
+
+
 
 `
 
