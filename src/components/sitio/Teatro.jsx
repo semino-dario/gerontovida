@@ -1,13 +1,12 @@
 import { ContenedorObra, ScrollHorizontal } from './ScrollHorizontal'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import todavia from '../../svg/todavia.svg'
-
+import './fonts.css'
 export default function Teatro() {
 
     const obras = []
 
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 1; i <= 7; i++) {
         const imagenes = require(`../../imagenes/teatro/${i}.webp`)
         obras.push(imagenes)
     }
@@ -18,7 +17,7 @@ export default function Teatro() {
             <ContenedorScroll >
                 <br />
                 <div className='portada'>
-                    <img className='mascara' src={todavia} alt="" />
+                    <h3 className='titulo'>"Todavía algo que decir"</h3>
                     <p className='cartelTeatro'>Ciclo de obras breves escritas por Silvia Perelis, directora del Espacio Gerontovida. El objetivo del ciclo es la puesta en escena sobre vivencias de la vejez y del envejecer para promover el debate con la comunidad. </p>
                     <br />
                 </div>
@@ -38,7 +37,7 @@ export default function Teatro() {
 }
 
 const ContenedorScroll = styled.div`
-
+margin-top: 5%;
 display:flex;
 flex-direction:column;
 

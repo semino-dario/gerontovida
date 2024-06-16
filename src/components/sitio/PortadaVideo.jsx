@@ -2,17 +2,20 @@ import { ContenedorGeneral } from "../Contenedor";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export default function PortadaVideo({ video }) {
+export default function PortadaVideo({ video, texto, link }) {
 
     return (
         <SeccionCartel>
 
             <div>
-                <Link to="/video-congreso-2023"> <img className="imagen" src={video} alt="" /> </Link>
+                <Link to={link}> <img className="imagen" src={video} alt="" /> </Link>
             </div>
-            <br />
-            <h3>Video del primer conversatorio del año</h3>
-            <br />
+            {texto &&
+                <div>
+                    <br />
+                    <h4>{texto}</h4>
+                    <br />
+                </div>}
         </SeccionCartel>
     )
 }
@@ -25,7 +28,7 @@ img{
    border-radius: 10px 10px 0px 0px;
    border-bottom: solid 1px black; 
 }
-h3{
+h4{
     color:#006E00;
 }
 

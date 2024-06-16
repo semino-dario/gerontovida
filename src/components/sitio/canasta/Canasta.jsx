@@ -11,10 +11,13 @@ import axios from "axios";
 import BotonDescarga from "../../BotonDescarga";
 import { Link } from "react-router-dom";
 import { MyLoader2, MyLoader3 } from "../../Skeleton";
+import { DataCanastaTodas } from "./DataCanasta1"
+import '../fonts.css'
 
 
 function Canasta() {
-  const DataCanasta = useSelector((state) => state.canasta.data)
+  // const DataCanasta = useSelector((state) => state.canasta.data)
+  const DataCanasta = DataCanastaTodas
   const [jubilacionMinima, setJubilacionMinima] = useState(null)
   const [ultimaCanastaTorta, setUltimaCanastaTorta] = useState(null)
   const [periodo, setPeriodo] = useState(null)
@@ -41,14 +44,14 @@ function Canasta() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios("https://api-contenidos.cyclic.app/api/v1/canastas")
-        const data = response.data.data
+        // const response = await axios("https://api-contenidos.cyclic.app/api/v1/canastas")
+        // const data = response.data.data
 
-        const latestCanasta = data[data.length - 1];
+
+        const latestCanasta = DataCanasta[DataCanasta.length - 1];
 
         setJubilacionMinima(latestCanasta.minima);
-        setUltimaCanastaTorta(Object.values(latestCanasta.categorias));
-        setPeriodo(latestCanasta.periodo);
+        setUltimaCanastaTorta(Object.values(latestCanasta.categorias)); setPeriodo(latestCanasta.periodo);
         setId(latestCanasta._id)
         setRubros(latestCanasta.categorias);
         setTotalCanasta(latestCanasta.canasta);
@@ -120,7 +123,7 @@ function Canasta() {
         <br />
         <CanastaJubilados>
           <div className="titulo-canasta">
-            <h1>Canásta Básica de los Jubilados</h1>
+            <h3 className="titulo2">Canásta Básica de los Jubilados</h3>
             <p className="texto-canasta">
               Calculada dos veces por año por la Defensoría de la Tercera Edad de la
               Ciudad de Buenos Aires.
@@ -165,13 +168,16 @@ function Canasta() {
                 </Accordion>
               </div>
             </div>
+
           </div>
           <div className="my-5 boton">
-            <BotonDescarga
+            {/* <BotonDescarga
               id={id}
               periodo={periodo}
               texto={'descargar pdf'}
-            />
+            /> */}
+            <br />
+
           </div>
 
         </CanastaJubilados>

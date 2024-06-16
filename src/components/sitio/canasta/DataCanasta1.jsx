@@ -68,4 +68,103 @@ export const DataCanasta9 = []
 
 DataCanasta9.push(mayo2010, diciembre2010, mayo2011, noviembre2011, mayo2012, diciembre2012, mayo2013, diciembre2013, mayo2014, noviembre2014, mayo2015, noviembre2015, abril2016, agosto2016, diciembre2016, mayo2017, noviembre2017, abril2018, agosto2018, diciembre2018, abril2019, octubre2019, abril2020, octubre2020, abril2021, octubre2021, abril2022, octubre2022);
 
+export const canastaMarzo24 = [{
+  "categorias": {
+    "vivienda": 117000,
+    "transporte": 46000,
+    "vestimenta": 25000,
+    "recreacion": 26000,
+    "servicios": 26394,
+    "alimentos": 197610,
+    "limpieza": 93190,
+    "medicamentos": 108717,
+    "farmacia": 45220
+  },
+  "_id": "65faf07b260adc41355193a7",
+  "periodo": "Marzo-2024",
+  "canasta": 685041,
+  "minima": 204445,
+  "pdf": "canastas/Canasta Basica de los Mayores - Abril 2024.pdf",
+  "publishedDate": "2024-03-20T14:19:39.600Z",
+  "__v": 0
+}]
 
+export const DataCanastaTodas = [
+  {
+    "categorias": {
+      "vivienda": 21630,
+      "transporte": 4400,
+      "vestimenta": 3600,
+      "recreacion": 2550,
+      "servicios": 5363,
+      "alimentos": 15104,
+      "limpieza": 6531,
+      "medicamentos": 16327
+    },
+    "_id": "653a6d4cdbaa9bcdb9d75ac4",
+    "periodo": "Octubre-2021",
+    "canasta": 75505,
+    "minima": 25922,
+    "pdf": "canastas/Canasta Basica de los Mayores - OCTUBRE 2021_DEFINITIVA (1)-8.pdf",
+    "publishedDate": "2023-10-26T13:44:44.206Z",
+    "__v": 0
+  },
+  {
+    "categorias": {
+      "vivienda": 59000,
+      "transporte": 10900,
+      "vestimenta": 12000,
+      "recreacion": 13300,
+      "servicios": 13680,
+      "alimentos": 41233,
+      "limpieza": 16961,
+      "medicamentos": 34990
+    },
+    "_id": "653bcc0a035153b4c1284a88",
+    "periodo": "Abril-2023",
+    "canasta": 202064,
+    "minima": 58665,
+    "pdf": "canastas/c_Canasta BaÌsica del Jubilado abril 2023-20.pdf",
+    "publishedDate": "2023-10-27T14:41:14.202Z",
+    "__v": 0
+  },
+  {
+    "categorias": {
+      "vivienda": 85500,
+      "transporte": 16500,
+      "vestimenta": 19000,
+      "recreacion": 20100,
+      "servicios": 19200,
+      "alimentos": 65578,
+      "limpieza": 26363,
+      "medicamentos": 60944
+    },
+    "_id": "65774a013cb55fa489e6ee6a",
+    "periodo": "Octubre-2023",
+    "canasta": 313185,
+    "minima": 118450,
+    "pdf": "canastas/Canasta Basica de los Mayores - OCTUBRE 2023.pdf",
+    "publishedDate": "2023-12-11T17:42:25.699Z",
+    "__v": 0
+  },
+  {
+    "categorias": {
+      "vivienda": 117000,
+      "transporte": 46000,
+      "vestimenta": 25000,
+      "recreacion": 26000,
+      "servicios": 26394,
+      "alimentos": 197610,
+      "limpieza": 93190,
+      "medicamentos": 108717,
+      "farmacia": 45220
+    },
+    "_id": "65faf07b260adc41355193a7",
+    "periodo": "Marzo-2024",
+    "canasta": 685041,
+    "minima": 204445,
+    "pdf": "canastas/Canasta Basica de los Mayores - Abril 2024.pdf",
+    "publishedDate": "2024-03-20T14:19:39.600Z",
+    "__v": 0
+  }
+]

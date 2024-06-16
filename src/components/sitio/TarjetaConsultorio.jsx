@@ -84,6 +84,7 @@ h5{
     color: #008900;
     border-bottom: 1px solid gray;
     height: 4.5rem;
+    padding-inline: 2%;
 }
 
 img{

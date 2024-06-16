@@ -65,7 +65,7 @@ export default function Articulo({ encabezado }) {
                             <div className='contenedor-copete' id={encabezado}><br />
                                 <img className="img-fluid img-thumbnail" src={articulo.imageUrl} alt="" />
                                 <br />
-                                <h2 className="titulo">{articulo.title}</h2>
+                                <h2 className="tituloArticulo">{articulo.title}</h2>
                                 <h5>{articulo.author}</h5>
                                 <p> {fecha} </p>
                                 <div className="text-start p-3 texto" dangerouslySetInnerHTML={createMarkup(articulo.content)} />
@@ -163,7 +163,7 @@ justify-content:center;
 align-items:center;
 }
 
-.titulo{
+.tituloArticulo{
 padding: 2%;
 }
 

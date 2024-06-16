@@ -14,7 +14,7 @@ export default function NotaSemino() {
                         <img src={imprevistos} alt="Dr. Eugenio Semino" />
                     </div>
                     <div className="semino-texto">
-                        <div >
+                        <div  >
                             <h3>Cuarenta años de imprevistos</h3>
                             <br />
                             <h5>La historia del sistema previsional argentino en democracia</h5>
@@ -49,7 +49,7 @@ const ColumnaSemino = styled.div`
 
 
 img{
-    width:100%;
+    width:auto;
     height: 250px;
     object-fit:cover;
 }
@@ -62,6 +62,7 @@ img{
     text-align:left;
     overflow: hidden;
     font-size: 0.9em;
+    border-top: 1px solid white;
 }
 
 .link{
@@ -80,13 +81,21 @@ img{
 }
 
 img{
-    height:80%;
     border-radius:10px;
+    width: auto;
+    
 
 }
 
 .contenedor-imagen{
     border-radius:10px;
+
+}
+
+.semino-texto{
+    border: none;
+    border-left: 1px solid white;
+
 }
 }
 

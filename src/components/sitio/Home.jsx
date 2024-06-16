@@ -20,7 +20,7 @@ import VideoNoticias from './noticias/video-noticias/VideoNoticias';
 import { ContenedorGeneral } from "../Contenedor";
 import Actividades from './Actividades';
 import conversatorio from "../../imagenes/encuentro-24.jpg"
-
+import './fonts.css'
 
 
 export default function Home() {
@@ -50,15 +50,23 @@ export default function Home() {
                 <PortadaHome />
                 <ContenedorGeneral className=''>
                     <PortadaVideo
-                        video={conversatorio}
+                        video={encuentro}
+                        link={"/ver-video/1"}
                     />
                 </ContenedorGeneral>
+                {/* <ContenedorGeneral className=''>
+                    <PortadaVideo
+                        video={conversatorio}
+                        texto={"Video del primer conversatorio del año"}
+                        link={"/ver-video/2"}
+                    /> 
+                </ContenedorGeneral>*/}
                 <br />
                 <hr />
                 <br />
-                <h3>Noticias</h3>
+                <h3 className='titulo'>Noticias</h3>
                 <Noticias />
-                <VideoNoticias />
+                {/* <VideoNoticias /> */}
                 <NotaSemino />
                 <br /> <br />
                 <ScrollConsultorio />
@@ -76,6 +84,9 @@ export default function Home() {
 
 
 const ContainerHome = styled.div`
+
+
+
 transition: opacity 0.4s;
 margin: 0 auto;
 

@@ -6,13 +6,14 @@ import Footer from "./Footer";
 import { useEffect } from "react";
 import { useState } from "react";
 import Preloder from "./../Preloder";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import play from "../../svg/play.svg"
 
 export default function VideoEncuentro() {
 
     const [preloder, setPreloder] = useState(true)
     const [verVideo, setVerVideo] = useState(false)
+    const { id } = useParams("id")
 
     useEffect(
         () => {
@@ -39,11 +40,11 @@ export default function VideoEncuentro() {
                                 </div>
                                 :
                                 <div className="contenedor-video">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QT9ntw_ClHE?si=4kYN10X0gZS_AjIF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                                    <iframe width="560" height="315" src={id === "2" ? "https://www.youtube.com/embed/QT9ntw_ClHE?si=4kYN10X0gZS_AjIF" : "https://www.youtube.com/embed/7HTDet30Uuo?si=QwXxpAAFxeukA2_R"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                                 </div>}
 
                             <div>
-                                <h3>Primer conversatorio del año - 09/04/2024</h3>
+                                <h3>{id === "2" ? "Primer conversatorio del año - 09/04/2024" : "Historia de los encuentros Gerontovida"}</h3>
                                 <hr />
                                 <p></p>
                             </div>

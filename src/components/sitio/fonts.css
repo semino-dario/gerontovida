@@ -1,0 +1,41 @@
+@font-face{
+    font-family: Gagalin;
+    src: url(../../fonts/Gagalin-Regular.otf)
+}
+
+.titulo{
+    font-family: Gagalin;
+    color: #008900;
+    font-size: 2rem ;
+}
+
+.titulo2{
+    font-family: Gagalin;
+    color: #f30000;
+    font-size: 1.8rem;
+}
+
+
+@media (min-width: 400px){
+
+.titulo{
+    font-size: 3rem;
+}
+
+.titulo2{
+    font-size: 2.5rem;
+
+}
+
+}
+
+@media(min-widht: 750px) {
+    .titulo{
+        font-size: 4rem;
+    }
+
+    .titulo2{
+        font-size: 3.5rem;
+    
+    }
+}

@@ -2,11 +2,19 @@ import { useSelector } from "react-redux";
 import { ScrollHorizontal } from "../ScrollHorizontal";
 import PortadaNoticia from "./PortadaNoticia";
 import SkeletonLoader from "../../SkeletonLoader";
+import { useEffect } from "react";
 
 export function Noticias() {
 
     const noticia = useSelector((state) => state.noticia.data);
+    const lastNews = []
 
+    if (noticia) {
+        for (let i = 0; i < noticia.length; i++) {
+            if (i > noticia.length - 6)
+                lastNews.push(noticia[i])
+        }
+    }
 
     if (noticia === undefined) {
 
@@ -17,16 +25,17 @@ export function Noticias() {
         )
 
     }
+
     return (
         <div id="noticias" >
             <br />
-            {noticia.length > 0 &&
+            {lastNews.length > 0 &&
                 (
                     <ScrollHorizontal
-                        contenido={[...noticia].reverse().map((item, index) => (
+                        contenido={lastNews.reverse().map((item, index) => (
                             item.author !== "Eugenio Semino" && (
                                 <div key={index}>
-                                    {index < noticia.length - 9 &&
+                                    {
                                         < PortadaNoticia
                                             imagen={item.imageUrl}
                                             titulo={item.title}

@@ -3,7 +3,7 @@ import tiempoLibre from '../../../imagenes/capacitacion/tiempo-libre.svg'
 import persona from '../../../imagenes/capacitacion/persona.jpg'
 import comunicacion from '../../../imagenes/capacitacion/comunicacion.png'
 import styled from "styled-components";
-
+import '../fonts.css'
 
 
 export default function ScrollCapacitacion() {
@@ -22,7 +22,7 @@ export default function ScrollCapacitacion() {
         <SeccionCapacitaciones id="capacitacion" >
             <hr />
             <br /> <br />
-            <h1>CAPACITACIONES</h1>
+            <h3 className='titulo'>CAPACITACIONES</h3>
             <h4>Aquí todos nuestros cursos</h4>
             <br />
             <ContenedorCapacitaciones>{

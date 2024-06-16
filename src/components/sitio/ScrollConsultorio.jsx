@@ -10,6 +10,7 @@ import carla from '../../imagenes/consultorio/carla.jpg'
 import romina from '../../imagenes/consultorio/romina.jpg'
 import silvia from '../../imagenes/consultorio/silvia.jpg'
 import ale from '../../imagenes/consultorio/ale.jpg'
+import './fonts.css'
 
 
 export default function ScrollConsultorio() {
@@ -36,7 +37,7 @@ export default function ScrollConsultorio() {
         <div id="consultorio" >
             <hr />
             <br /> <br />
-            <h1>CONSULTORIO GERONTOLÓGICO</h1>
+            <h3 className="titulo">CONSULTORIO GERONTOLÓGICO</h3>
             <h4>Aquí todos nuestros servicios</h4>
             <br />
             <ScrollHorizontal

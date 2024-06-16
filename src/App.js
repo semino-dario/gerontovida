@@ -72,7 +72,7 @@ function App() {
             </Route>
             <Route path="/articulo/:id/encabezado" element={<Articulo />} />
             <Route path="/reproducir-videos/:id" element={<ReproductorVideo />} />
-            <Route path="/video-congreso-2023" element={<VideoEncuentro />} />
+            <Route path="/ver-video/:id" element={<VideoEncuentro />} />
             <Route path="/notas-semino" element={<NotasSemino />} />
             <Route path="*" element={<NotFound />} />
 

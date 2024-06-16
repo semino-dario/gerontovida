@@ -9,7 +9,7 @@ import { useState } from "react";
 import Preloder from "../Preloder";
 import { Link, useParams } from "react-router-dom";
 import play from "../../svg/play.svg"
-
+import { videosTeatro } from "../../data/data";
 
 export default function ReproductorVideo() {
 
@@ -39,7 +39,7 @@ export default function ReproductorVideo() {
                 <>
                     <SeccionVideo>
                         <Portada />
-                        {video.length > 0 &&
+                        {videosTeatro.length > 0 &&
                             <ContenedorGeneral className="contenedor">
                                 {!verVideo ?
                                     <div className="contenedor-video">
@@ -47,13 +47,13 @@ export default function ReproductorVideo() {
                                     </div>
                                     :
                                     <div>
-                                        <iframe src={video[id - 1].url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                                        <iframe src={videosTeatro[id - 1].url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                                     </div>}
                                 <div>
                                     <br />
-                                    <h3>{video[id - 1].titulo}</h3>
+                                    <h3>{videosTeatro[id - 1].titulo}</h3>
                                     <hr /> <br />
-                                    <p>{video[id - 1].descripcion}</p>
+                                    <p>{videosTeatro[id - 1].descripcion}</p>
                                 </div>
                             </ContenedorGeneral>}
                         <Link to="/home/teatro"> <Button className="btn-dark">Volver</Button></Link>
